@@ -101,7 +101,7 @@ const CreateProduct = (props) => {
             data.append('price', value.price.trim())
             data.append('brandId', value.brand)
             data.append('mehanizmId', value.mehanizm)
-            data.append('bgenderId', value.gender)
+            data.append('genderId', value.gender)
             data.append('shapeId', value.shape)
             data.append('materialId', value.material)
             data.append('glassId', value.glass)

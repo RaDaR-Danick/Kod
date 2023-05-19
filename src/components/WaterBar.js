@@ -16,7 +16,7 @@ const WaterBar = observer(() => {
         }
         const params = {}
         if (catalog.category) params.category = catalog.category
-        if (catalog.brand) params.water = catalog.brand
+        if (catalog.brand) params.brand = catalog.brand
         if (catalog.mehanizm) params.mehanizm = catalog.mehanizm
         if (catalog.gender) params.gender = catalog.gender
         if (catalog.shape) params.shape = catalog.shape

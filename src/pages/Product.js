@@ -43,23 +43,24 @@ const Product = () => {
                     <Button onClick={() => handleClick(product.id)}>Добавить в корзину</Button>
                 </Col>
             </Row>
-            {!!product.props.length &&
-                <Row>
-                    <Col>
-                        <h3>Характеристики</h3>
-                            <Table bordered hover size="sm">
-                                <tbody>
-                                    {product.props.map(item => 
-                                        <tr key={item.id}>
-                                            <td>{item.name}</td>
-                                            <td>{item.value}</td>
-                                        </tr>
-                                    )}
-                                </tbody>
-                            </Table>
-                    </Col>
-                </Row>
-            }
+            <Row>
+                <Col>
+                    <h4>Характеристики:</h4>
+                    <Table bordered hover size="sm">
+                        <tbody>                                
+                            <tr>{product.brand.name}</tr>
+                            <tr>{product.mehanizm.name}</tr>
+                            <tr>{product.gender.name}</tr>
+                            <tr>{product.shape.name}</tr>
+                            <tr>{product.material.name}</tr>
+                            <tr>{product.glass.name}</tr>
+                            <tr>{product.strap.name}</tr>
+                            <tr>{product.power.name}</tr>
+                            <tr>{product.water.name}</tr>
+                        </tbody>
+                    </Table>
+                </Col>
+            </Row>
         </Container>
     )
 }

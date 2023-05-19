@@ -76,7 +76,7 @@ const AdminProducts = () => {
     }
 
     return (
-        <Container>
+        <Container> 
             <h1>Товары</h1>
             <Button onClick={() => setCreateShow(true)}>Создать товар</Button>
             <CreateProduct show={createShow} setShow={setCreateShow} setChange={setChange} />
