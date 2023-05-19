@@ -88,8 +88,15 @@ const AdminProducts = () => {
                         <tr>
                             <th>Название</th>
                             <th>Фото</th>
-                            <th>Категория</th>
                             <th>Бренд</th>
+                            <th>Тип механизма</th>
+                            <th>Пол</th>
+                            <th>Форма корпуса</th>
+                            <th>Материал корпуса</th>
+                            <th>Стекло</th>
+                            <th>Материал браслета/ремешка</th>
+                            <th>Запас хода</th>
+                            <th>Водонепроницаемость</th>
                             <th>Цена</th>
                             <th>Редактировать</th>
                             <th>Удалить</th>
@@ -103,8 +110,15 @@ const AdminProducts = () => {
                                     {item.image &&
                                     <a href={process.env.REACT_APP_IMG_URL + item.image} target="_blank">фото</a>}
                                 </td>
-                                <td>{item.category?.name || 'NULL'}</td>
                                 <td>{item.brand?.name || 'NULL'}</td>
+                                <td>{item.mehanizm?.name || 'NULL'}</td>
+                                <td>{item.gender?.name || 'NULL'}</td>
+                                <td>{item.shape?.name || 'NULL'}</td>
+                                <td>{item.material?.name || 'NULL'}</td>
+                                <td>{item.glass?.name || 'NULL'}</td>
+                                <td>{item.strap?.name || 'NULL'}</td>
+                                <td>{item.power?.name || 'NULL'}</td>
+                                <td>{item.water?.name || 'NULL'}</td>
                                 <td>{item.price}</td>
                                 <td>
                                     <Button variant="success" size="sm" onClick={() => handleUpdateClick(item.id)}>
@@ -123,7 +137,7 @@ const AdminProducts = () => {
                     {totalPages > 1 && <Pagination>{pages}</Pagination>}
                 </>
             ) : (
-                <p>Список товаров пустой</p>
+                <p className='mt-3'>Список товаров пустой</p>
             )}
             <Button><Link style={{color: 'white', textDecoration: 'none'}} to="/admin">Назад</Link></Button>
         </Container>

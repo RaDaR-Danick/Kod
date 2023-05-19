@@ -22,8 +22,15 @@ const Admin = () => {
             </p>
             <ul>
                 <li><Link to="/admin/orders">Заказы в магазине</Link></li>
-                <li><Link to="/admin/categories">Категории каталога</Link></li>
                 <li><Link to="/admin/brands">Бренды каталога</Link></li>
+                <li><Link to="/admin/mehanizms">Типы механизмов</Link></li>
+                <li><Link to="/admin/genders">Пол</Link></li>
+                <li><Link to="/admin/shapes">Формы корпусов</Link></li>
+                <li><Link to="/admin/materials">Материалы корпусов</Link></li>
+                <li><Link to="/admin/glasses">Стекла</Link></li>
+                <li><Link to="/admin/straps">Материал браслета/ремешка</Link></li>
+                <li><Link to="/admin/powers">Запас хода</Link></li>
+                <li><Link to="/admin/waters">Водонепроницаемость</Link></li>
                 <li><Link to="/admin/products">Товары каталога</Link></li>
             </ul>
             <Button onClick={handleLogout}>Выйти</Button>

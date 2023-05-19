@@ -16,6 +16,14 @@ import AdminOrders from '../pages/AdminOrders.js'
 import AdminOrder from '../pages/AdminOrder.js'
 import AdminCategories from '../pages/AdminCategories.js'
 import AdminBrands from '../pages/AdminBrands.js'
+import AdminMehanizms from '../pages/AdminMehanizms.js'
+import AdminGenders from '../pages/AdminGenders.js'
+import AdminShapes from '../pages/AdminShapes.js'
+import AdminMaterials from '../pages/AdminMaterials.js'
+import AdminGlasses from '../pages/AdminGlasses.js'
+import AdminStraps from '../pages/AdminStraps.js'
+import AdminPowers from '../pages/AdminPowers.js'
+import AdminWaters from '../pages/AdminWaters.js'
 import AdminProducts from '../pages/AdminProducts.js'
 import { AppContext } from './AppContext.js'
 import { useContext } from 'react'
@@ -45,6 +53,14 @@ const adminRoutes = [
     {path: '/admin/order/:id', Component: AdminOrder},
     {path: '/admin/categories', Component: AdminCategories},
     {path: '/admin/brands', Component: AdminBrands},
+    {path: '/admin/mehanizms', Component: AdminMehanizms},
+    {path: '/admin/genders', Component: AdminGenders},
+    {path: '/admin/shapes', Component: AdminShapes},
+    {path: '/admin/materials', Component: AdminMaterials},
+    {path: '/admin/glasses', Component: AdminGlasses},
+    {path: '/admin/straps', Component: AdminStraps},
+    {path: '/admin/powers', Component: AdminPowers},
+    {path: '/admin/waters', Component: AdminWaters},
     {path: '/admin/products', Component: AdminProducts},
 ]
 
