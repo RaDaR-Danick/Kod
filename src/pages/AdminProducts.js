@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchAllProducts, deleteProduct } from '../http/catalogAPI.js'
+import { fetchAllProducts, deleteProduct } from '../http/catalogAdmin.js'
 import { Button, Container, Spinner, Table, Pagination } from 'react-bootstrap'
 import CreateProduct from '../components/CreateProduct.js'
 import UpdateProduct from '../components/UpdateProduct.js'
