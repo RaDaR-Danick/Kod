@@ -1,5 +1,5 @@
 import { Modal, Button, Form } from 'react-bootstrap'
-import { createMaterial, fetchMaterial, updateMaterial } from '../http/catalogAPI.js'
+import { createMaterial, fetchMaterial, updateMaterial } from '../http/adminAPI.js'
 import { useState, useEffect } from 'react'
 
 const EditMaterial = (props) => {

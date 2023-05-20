@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchStraps, deleteStrap } from '../http/catalogAPI.js'
+import { fetchStraps, deleteStrap } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditStrap from '../components/EditStrap.js'
 import { Link } from 'react-router-dom'

@@ -1,5 +1,5 @@
 import { Modal, Button, Form } from 'react-bootstrap'
-import { createMehanizm, fetchMehanizm, updateMehanizm } from '../http/catalogAPI.js'
+import { createMehanizm, fetchMehanizm, updateMehanizm } from '../http/adminAPI.js'
 import { useState, useEffect } from 'react'
 
 const EditMehanizm = (props) => {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchBrands, deleteBrand } from '../http/catalogAPI.js'
+import { fetchBrands, deleteBrand } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditBrand from '../components/EditBrand.js'
 import { Link } from 'react-router-dom'

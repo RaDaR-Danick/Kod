@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchPowers, deletePower } from '../http/catalogAPI.js'
+import { fetchPowers, deletePower } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditPower from '../components/EditPower.js'
 import { Link } from 'react-router-dom'

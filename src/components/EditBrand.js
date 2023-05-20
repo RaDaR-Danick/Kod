@@ -1,5 +1,5 @@
 import { Modal, Button, Form } from 'react-bootstrap'
-import { createBrand, fetchBrand, updateBrand } from '../http/catalogAPI.js'
+import { createBrand, fetchBrand, updateBrand } from '../http/adminAPI.js'
 import { useState, useEffect } from 'react'
 
 const EditBrand = (props) => {

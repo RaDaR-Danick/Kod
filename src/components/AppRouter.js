@@ -61,7 +61,7 @@ const adminRoutes = [
     {path: '/admin/straps', Component: AdminStraps},
     {path: '/admin/powers', Component: AdminPowers},
     {path: '/admin/waters', Component: AdminWaters},
-    {path: '/admin/products', Component: AdminProducts},
+    {path: '/admin/catalogs', Component: AdminProducts},
 ]
 
 const AppRouter = observer(() => {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchMehanizms, deleteMehanizm } from '../http/catalogAPI.js'
+import { fetchMehanizms, deleteMehanizm } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditMehanizm from '../components/EditMehanizm.js'
 import { Link } from 'react-router-dom'

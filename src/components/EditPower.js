@@ -1,5 +1,5 @@
 import { Modal, Button, Form } from 'react-bootstrap'
-import { createPower, fetchPower, updatePower } from '../http/catalogAPI.js'
+import { createPower, fetchPower, updatePower } from '../http/adminAPI.js'
 import { useState, useEffect } from 'react'
 
 const EditPower = (props) => {

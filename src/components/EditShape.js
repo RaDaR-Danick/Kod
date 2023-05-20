@@ -1,5 +1,5 @@
 import { Modal, Button, Form } from 'react-bootstrap'
-import { createShape, fetchShape, updateShape } from '../http/catalogAPI.js'
+import { createShape, fetchShape, updateShape } from '../http/adminAPI.js'
 import { useState, useEffect } from 'react'
 
 const EditShape = (props) => {

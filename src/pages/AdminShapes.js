@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchShapes, deleteShape } from '../http/catalogAPI.js'
+import { fetchShapes, deleteShape } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditShape from '../components/EditShape.js'
 import { Link } from 'react-router-dom'

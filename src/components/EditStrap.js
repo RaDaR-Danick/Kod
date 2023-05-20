@@ -1,5 +1,5 @@
 import { Modal, Button, Form } from 'react-bootstrap'
-import { createStrap, fetchStrap, updateStrap } from '../http/catalogAPI.js'
+import { createStrap, fetchStrap, updateStrap } from '../http/adminAPI.js'
 import { useState, useEffect } from 'react'
 
 const EditStrap = (props) => {

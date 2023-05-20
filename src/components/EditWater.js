@@ -1,5 +1,5 @@
 import { Modal, Button, Form } from 'react-bootstrap'
-import { createWater, fetchWater, updateWater } from '../http/catalogAPI.js'
+import { createWater, fetchWater, updateWater } from '../http/adminAPI.js'
 import { useState, useEffect } from 'react'
 
 const EditWater = (props) => {

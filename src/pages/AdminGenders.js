@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchGenders, deleteGender } from '../http/catalogAPI.js'
+import { fetchGenders, deleteGender } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditGender from '../components/EditGender.js'
 import { Link } from 'react-router-dom'

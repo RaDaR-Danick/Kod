@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchMaterials, deleteMaterial } from '../http/catalogAPI.js'
+import { fetchMaterials, deleteMaterial } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditMaterial from '../components/EditMaterial.js'
 import { Link } from 'react-router-dom'

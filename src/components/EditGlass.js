@@ -1,5 +1,5 @@
 import { Modal, Button, Form } from 'react-bootstrap'
-import { createGlass, fetchGlass, updateGlass } from '../http/catalogAPI.js'
+import { createGlass, fetchGlass, updateGlass } from '../http/adminAPI.js'
 import { useState, useEffect } from 'react'
 
 const EditGlass = (props) => {

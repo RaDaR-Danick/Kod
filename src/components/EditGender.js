@@ -1,5 +1,5 @@
 import { Modal, Button, Form } from 'react-bootstrap'
-import { createGender, fetchGender, updateGender } from '../http/catalogAPI.js'
+import { createGender, fetchGender, updateGender } from '../http/adminAPI.js'
 import { useState, useEffect } from 'react'
 
 const EditGender = (props) => {

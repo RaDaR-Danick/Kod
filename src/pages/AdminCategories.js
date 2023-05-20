@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchCategories, deleteCategory } from '../http/catalogAPI.js'
+import { fetchCategories, deleteCategory } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditCategory from '../components/EditCategory.js'
 import { Link } from 'react-router-dom'

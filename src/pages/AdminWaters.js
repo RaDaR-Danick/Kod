@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchWaters, deleteWater } from '../http/catalogAPI.js'
+import { fetchWaters, deleteWater } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditWater from '../components/EditWater.js'
 import { Link } from 'react-router-dom'

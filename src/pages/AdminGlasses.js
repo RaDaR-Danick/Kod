@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchGlasses, deleteGlass } from '../http/catalogAPI.js'
+import { fetchGlasses, deleteGlass } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditGlass from '../components/EditGlass.js'
 import { Link } from 'react-router-dom'
