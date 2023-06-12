@@ -50,7 +50,7 @@ const AdminPowers = () => {
 
     return (
         <Container>
-            <h1>Бренды</h1>
+            <h1>Запас хода</h1>
             <Button onClick={() => handleCreateClick()}>Создать срок запаса хода</Button>
             <EditPower id={powerId} show={show} setShow={setShow} setChange={setChange} />
             {powers.length > 0 ? (

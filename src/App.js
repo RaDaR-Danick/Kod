@@ -1,13 +1,13 @@
 import { BrowserRouter } from 'react-router-dom'
 import AppRouter from './components/AppRouter.js'
-import NavBar from './components/NavBar.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
 import { AppContext } from './components/AppContext.js'
 import { check as checkAuth } from './http/userAPI.js'
 import { useState, useContext, useEffect } from 'react'
 import { observer } from 'mobx-react-lite'
 import Loader from './components/Loader.js'
+import Header from './sections/header.js'
+import Footer from './sections/footer.js'
 
 import { fetchBasket } from './http/basketAPI.js'
 
@@ -38,8 +38,9 @@ const App = observer(() => {
 
     return (
         <BrowserRouter>
-            <NavBar />
+            <Header />
             <AppRouter />
+            <Footer />
         </BrowserRouter>
     )
 })

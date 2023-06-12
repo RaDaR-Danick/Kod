@@ -1,11 +1,14 @@
 import { Routes, Route } from 'react-router-dom'
+import Home from '../pages/Home.js'
 import Shop from '../pages/Shop.js'
 import Login from '../pages/Login.js'
 import Signup from '../pages/Signup.js'
 import Basket from '../pages/Basket.js'
 import Checkout from '../pages/Checkout.js'
 import Product from '../pages/Product.js'
+import About from '../pages/About.js'
 import Delivery from '../pages/Delivery.js'
+import Service from '../pages/Service.js'
 import Contacts from '../pages/Contacts.js'
 import NotFound from '../pages/NotFound.js'
 import User from '../pages/User.js'
@@ -30,13 +33,16 @@ import { useContext } from 'react'
 import { observer } from 'mobx-react-lite'
 
 const publicRoutes = [
-    {path: '/', Component: Shop},
+    {path: '/', Component: Home},
+    {path: '/Shop', Component: Shop},
     {path: '/login', Component: Login},
     {path: '/signup', Component: Signup},
     {path: '/product/:id', Component: Product},
     {path: '/basket', Component: Basket},
     {path: '/checkout', Component: Checkout},
+    {path: '/about', Component: About},
     {path: '/delivery', Component: Delivery},
+    {path: '/service', Component: Service},
     {path: '/contacts', Component: Contacts},
     {path: '*', Component: NotFound},
 ]

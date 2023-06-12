@@ -50,7 +50,7 @@ const AdminShapes = () => {
 
     return (
         <Container>
-            <h1>Бренды</h1>
+            <h1>Форма корпуса</h1>
             <Button onClick={() => handleCreateClick()}>Создать форму корпуса</Button>
             <EditShape id={shapeId} show={show} setShow={setShow} setChange={setChange} />
             {shapes.length > 0 ? (

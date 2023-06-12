@@ -27,7 +27,7 @@ const MaterialBar = observer(() => {
         if (catalog.water) params.water = catalog.water
         if (catalog.page > 1) params.page = catalog.page
         navigate({
-            pathname: '/',
+            pathname: '/shop',
             search: '?' + createSearchParams(params),
         })
     }

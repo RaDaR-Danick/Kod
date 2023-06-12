@@ -1,32 +1,19 @@
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
-import { AppContext } from './AppContext.js'
-import { useContext } from 'react'
 import { observer } from 'mobx-react-lite'
+import './navbar.css'
 
 const NavBar = observer(() => {
-    const { user, basket } = useContext(AppContext)
     return (
-        <Navbar bg="primary" variant="dark" className='mb-4'>
-            <Container>
-                <NavLink to="/" className="navbar-brand">Интернет Магазин</NavLink>
+        <Navbar bg="white" variant="dark" className='mt-4'>
+            <Container className="d-flex justify-content-center">
                 <Nav className="ml-auto">
-                    <NavLink to="/delivery" className="nav-link">Доставка</NavLink>
-                    <NavLink to="/contacts" className="nav-link">Контакты</NavLink>
-                    {user.isAuth ? (
-                        <NavLink to="/user" className="nav-link">Личный кабинет</NavLink>
-                    ) : (
-                        <>
-                            <NavLink to="/login" className="nav-link">Войти</NavLink>
-                        </>
-                    )}
-                    {user.isAdmin && (
-                        <NavLink to="/admin" className="nav-link">Панель управления</NavLink>
-                    )}
-                    <NavLink to="/basket" className="nav-link">
-                        Корзина
-                        {!!basket.count && <span>({basket.count})</span>}
-                    </NavLink>
+                    <NavLink to="/" className="nav-link" style={{color: 'black', paddingRight: '80px'}}>ГЛАВНАЯ</NavLink>
+                    <NavLink to="/shop" className="nav-link" style={{color: 'black', paddingRight: '80px'}}>КАТАЛОГ</NavLink>
+                    <NavLink to="/about" className="nav-link" style={{color: 'black', paddingRight: '80px'}}>О МАГАЗИНЕ</NavLink>
+                    <NavLink to="/delivery" className="nav-link" style={{color: 'black', paddingRight: '80px'}}>ДОСТАВКА И ОПЛАТА</NavLink>
+                    <NavLink to="/service" className="nav-link" style={{color: 'black', paddingRight: '80px'}}>СЕРВИС-ЦЕНТР</NavLink>
+                    <NavLink to="/contacts" className="nav-link" style={{color: 'black', paddingRight: '80px'}}>КОНТАКТЫ</NavLink>
                 </Nav>
             </Container>
         </Navbar>

@@ -1,0 +1,32 @@
+import { Card, Col, Row } from 'react-bootstrap'
+import Container from 'react-bootstrap/Container'
+import clockwoman from "../assets/clockwoman.jpg";
+import K2U296L6 from "../assets/categories/K2U296L6.webp"
+import EM055482X from "../assets/categories/EM0554-82X.webp"
+import AK2972MPRG from "../assets/categories/AK2972MPRG.webp"
+
+const ClockWoman = () => {
+    return (
+        <Container className='mt-4'>
+            <Card>
+                <Row>
+                    <Col md={6}>
+                        <div>
+                            <p style={{paddingBottom: 10, paddingTop: 10, textAlign: 'center', fontSize: 17}}>В нашем интернет магазине представлены женские модели, которые отличаются усовершенствованным функциональными возможностями, роскошной отделкой и безупречным стилем.</p>
+                            <img src={ K2U296L6} alt="Купить Calvin Klein K2U296L6 в Алматы" width='27%' style={{marginRight: '3%', marginLeft: '3%'}}/>
+                            <img src={ AK2972MPRG } alt="Купить Anne Klein AK2972MPRG в Алматы" width='28%' style={{marginRight: '3%'}}/>
+                            <img src={ EM055482X } alt="Купить Citizen EM0554-82X в Алматы" width='27%'/>
+                        </div>
+                    </Col>
+                    <Col md={6}>
+                        <div>
+                            <a href='/shop/?gender=2'><img src={ clockwoman } alt="Купить мужские часы в Алматы" width='100%' /></a>
+                        </div>
+                    </Col>
+                </Row>
+            </Card>
+        </Container>
+    )
+}
+
+export default ClockWoman

@@ -9,7 +9,7 @@ const ProductItem = ({data}) => {
                 {data.image ? (
                     <Card.Img className='mt-1' style={{width: 220, height: 360, marginLeft: 3, objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + data.image + '.webp'} />
                 ) : (
-                    <Card.Img variant="top" src="http://via.placeholder.com/200" />
+                    <Card.Img variant="top" src={process.env.REACT_APP_IMG_URL + data.image + '.webp'} />
                 )}
                 <Card.Body style={{height: 100, overflow: 'hidden', textAlign: 'center'}}>
                     <strong>{data.name}</strong>

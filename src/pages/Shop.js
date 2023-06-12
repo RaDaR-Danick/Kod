@@ -16,7 +16,6 @@ import { AppContext } from '../components/AppContext.js';
 import {fetchCategories, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, fetchWaters, fetchAllProducts} from '../http/catalogAPI.js';
 import { observer } from 'mobx-react-lite';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import CarouselBox from '../components/CarouselBox.js';
 import ProductsSort from '../components/PrtoductsSort.js';
 import PriceSlider from '../components/PriceSlider/PriceSlider.jsx';
 import axios from 'axios';
@@ -233,7 +232,6 @@ const Shop = observer(() => {
 
     return (
         <Container>
-            <CarouselBox />
             <Row className="mt-4">
                 <Col md={3}>
                     <div>Каталог товаров</div>

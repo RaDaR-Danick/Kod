@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button, Image, Spinner, Table} from "react-bootstrap";
+import { Container, Row, Col, Button, Image, Spinner, Table, Card} from "react-bootstrap";
 import { useEffect, useState, useContext, useRef } from "react";
 import { fetchOneProduct, fetchProdRating, fetchCategoryProducts} from "../http/catalogAPI.js";
 import { useParams } from "react-router-dom";
@@ -85,15 +85,16 @@ const Product = () => {
             </Row>
         
             <div>
+                <h3>Сопутствующие товары</h3>
                 <Swiper
-                spaceBetween={20}
-                slidesPerView={1}
-                modules={[Navigation, Scrollbar]}
-                autoplay={{ delay: 3000 }}
-                pagination={{ el: ".swiper-pagination", clickable: true }}
-                navigation={{
-                    prevEl: prevBtn.current,
-                    nextEl: nextBtn.current,
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    modules={[Navigation, Scrollbar]}
+                    autoplay={{ delay: 3000 }}
+                    pagination={{ el: ".swiper-pagination", clickable: true }}
+                    navigation={{
+                        prevEl: prevBtn.current,
+                        nextEl: nextBtn.current,
                 }}
                 onBeforeInit={(swiper) => {
                     swiper.params.navigation.prevEl = prevBtn.current;
@@ -106,17 +107,17 @@ const Product = () => {
                 }}
                 breakpoints={{
                     600: {
-                    slidesPerView: 4,
+                    slidesPerView: 1,
                     spaceBetween: 10,
                     autoplay: false,
                     },
                     1024: {
-                    slidesPerView: 4,
+                    slidesPerView: 1,
                     spaceBetween: 10,
                     autoplay: false,
                     },
                     1300: {
-                    slidesPerView: 4,
+                    slidesPerView: 6,
                     spaceBetween: 10,
                     autoplay: false,
                     },
@@ -126,16 +127,14 @@ const Product = () => {
                     return (
                     <SwiperSlide key={product.id}>
                         <div>
-                        {product.image ? (
-                            <Image
-                            width={300}
-                            src={process.env.REACT_APP_IMG_URL + product.image + ".webp"}
-                            />
-                        ) : (
-                            <Image width={300} src="http://via.placeholder.com/300" />
-                        )}
-                        <h2>{product.name}</h2>
-                        <p>{product.full_name}</p>
+                            <Card style={{width: 206, height: 250, objectFit: 'contain', cursor: 'pointer',}}>
+                                {product.image ? (
+                                    <Card.Img className='mt-1' style={{width: 200, height: 240, marginLeft: 3, objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + product.image + '.webp'} />
+                                ) : (
+                                    <Card.Img variant="top" src={process.env.REACT_APP_IMG_URL + product.image + '.webp'} />
+                                )}
+                            </Card>
+                            <p>{product.name}</p>
                         </div>
                     </SwiperSlide>
                     );
