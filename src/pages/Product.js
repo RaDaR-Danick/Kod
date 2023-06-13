@@ -7,6 +7,8 @@ import { AppContext } from "../components/AppContext.js";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar} from "swiper";
 import "swiper/css";
+import planet from "../assets/icon-planet.png";
+import box from "../assets/icon-box.png";
 
 const Product = () => {
     SwiperCore.use([Autoplay, Navigation, Pagination]);
@@ -45,102 +47,141 @@ const Product = () => {
 
     return (
         <Container>
-            <Row className="mt-3 mb-3">
-                <Col lg={4}>
-                {product.image ? (
-                    <Image
-                    width={300}
-                    src={process.env.REACT_APP_IMG_URL + product.image + ".webp"}
-                    />
-                ) : (
-                    <Image width={300} src="http://via.placeholder.com/300" />
-                )}
-                </Col>
-                <Col lg={8}>
-                <h1>{product.name}</h1>
-                <h3>{product.price} тг.</h3>
+            <Card className="mt-4" style={{padding: '2% 8%'}}>
+                <Row>
+                    <Col lg={6}>
+                        {product.image ? (
+                            <Image
+                                width={300}
+                                src={process.env.REACT_APP_IMG_URL + product.image + ".webp"}
+                            />
+                        ) : (
+                            <Image width={300} src="http://via.placeholder.com/300" />
+                        )}
+                    </Col>
+                    
+                    <Col lg={6} style={{textAlign: "left", marginTop: 20}}>
+                        <h3>{product.name}</h3>
+                        <h3>{product.price} тг.</h3>
+                        <p>
+                            <img src={ planet } alt="map" style={{width: '18px'}} /> Международная гарантия<br />
+                            <img src={ box} alt="map" style={{width: '18px'}} /> Бесплатная доставка
+                        </p><br />
+                        <Button onClick={() => handleClick(product.id)}>
+                            Добавить в корзину
+                        </Button>
+                    </Col>
+                    
+                </Row>
+            </Card>
+
+            <Card className="mt-4" style={{padding: '2% 10%'}}>
+                <Row>
+                    <Col>
+                        <h4>Характеристики:</h4>
+                        <Table bordered hover size="sm" className="mt-4">
+                            <tbody style={{fontSize: 18}}>
+                                <tr height='40px' style={{textAlign: "center", verticalAlign: 'middle'}}>
+                                    <th style={{textAlign: "left"}}>Бренд</th>
+                                    <td>{product.brand.name}</td>
+                                </tr>
+                                <tr height='40px' style={{textAlign: "center", verticalAlign: 'middle'}}>
+                                    <th style={{textAlign: "left"}}>Тип Механизма</th>
+                                    <td>{product.mehanizm.name}</td>
+                                </tr>
+                                <tr height='40px' style={{textAlign: "center", verticalAlign: 'middle'}}>
+                                    <th style={{textAlign: "left"}}>Пол</th>
+                                    <td>{product.gender.name}</td>
+                                </tr>
+                                <tr height='40px' style={{textAlign: "center", verticalAlign: 'middle'}}>
+                                    <th style={{textAlign: "left"}}>Форма корпуса</th>
+                                    <td>{product.shape.name}</td>
+                                </tr>
+                                <tr height='40px' style={{textAlign: "center", verticalAlign: 'middle'}}>
+                                    <th style={{textAlign: "left"}}>Материал корпуса</th>
+                                    <td>{product.material.name}</td>
+                                </tr>
+                                <tr height='40px' style={{textAlign: "center", verticalAlign: 'middle'}}>
+                                    <th style={{textAlign: "left"}}>Стекло</th>
+                                    <td>{product.glass.name}</td>
+                                </tr>
+                                <tr height='40px' style={{textAlign: "center", verticalAlign: 'middle'}}>
+                                    <th style={{textAlign: "left"}}>Материал браслета/ремешка</th>
+                                    <td>{product.strap.name}</td>
+                                </tr>
+                                <tr height='40px' style={{textAlign: "center", verticalAlign: 'middle'}}>
+                                    <th style={{textAlign: "left"}}>Запас хода</th>
+                                    <td>{product.power.name}</td>
+                                </tr>
+                                <tr height='40px' style={{textAlign: "center", verticalAlign: 'middle'}}>
+                                    <th style={{textAlign: "left"}}>Водонепроницаемость</th>
+                                    <td>{product.water.name}</td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                    </Col>
+                </Row>
+            </Card>
         
-                <Button onClick={() => handleClick(product.id)}>
-                    Добавить в корзину
-                </Button>
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                <h4>Характеристики:</h4>
-                <Table bordered hover size="sm">
-                    <tbody>
-                    <tr>{product.brand.name}</tr>
-                    <tr>{product.mehanizm.name}</tr>
-                    <tr>{product.gender.name}</tr>
-                    <tr>{product.shape.name}</tr>
-                    <tr>{product.material.name}</tr>
-                    <tr>{product.glass.name}</tr>
-                    <tr>{product.strap.name}</tr>
-                    <tr>{product.power.name}</tr>
-                    <tr>{product.water.name}</tr>
-                    </tbody>
-                </Table>
-                </Col>
-            </Row>
-        
-            <div>
-                <h3>Сопутствующие товары</h3>
-                <Swiper
-                    spaceBetween={20}
-                    slidesPerView={1}
-                    modules={[Navigation, Scrollbar]}
-                    autoplay={{ delay: 3000 }}
-                    pagination={{ el: ".swiper-pagination", clickable: true }}
-                    navigation={{
-                        prevEl: prevBtn.current,
-                        nextEl: nextBtn.current,
-                }}
-                onBeforeInit={(swiper) => {
-                    swiper.params.navigation.prevEl = prevBtn.current;
-                    swiper.params.navigation.nextEl = nextBtn.current;
-                    swiper.params.scrollbar.el = scrollbar.current;
-                }}
-                scrollbar={{
-                    el: scrollbar,
-                    draggable: true,
-                }}
-                breakpoints={{
-                    600: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    autoplay: false,
-                    },
-                    1024: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    autoplay: false,
-                    },
-                    1300: {
-                    slidesPerView: 6,
-                    spaceBetween: 10,
-                    autoplay: false,
-                    },
-                }}
-                >
-                {sameCollectionProducts?.map((product) => {
-                    return (
-                    <SwiperSlide key={product.id}>
-                        <div>
-                            <Card style={{width: 206, height: 250, objectFit: 'contain', cursor: 'pointer',}}>
-                                {product.image ? (
-                                    <Card.Img className='mt-1' style={{width: 200, height: 240, marginLeft: 3, objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + product.image + '.webp'} />
-                                ) : (
-                                    <Card.Img variant="top" src={process.env.REACT_APP_IMG_URL + product.image + '.webp'} />
-                                )}
-                            </Card>
-                            <p>{product.name}</p>
-                        </div>
-                    </SwiperSlide>
-                    );
-                })}
-                </Swiper>
-            </div>
+            <Card className="mt-4" style={{padding: '2%'}}>
+                <div>
+                    <h4>Сопутствующие товары</h4>
+                    <Swiper
+                        spaceBetween={20}
+                        slidesPerView={1}
+                        modules={[Navigation, Scrollbar]}
+                        autoplay={{ delay: 3000 }}
+                        pagination={{ el: ".swiper-pagination", clickable: true }}
+                        navigation={{
+                            prevEl: prevBtn.current,
+                            nextEl: nextBtn.current,
+                    }}
+                    onBeforeInit={(swiper) => {
+                        swiper.params.navigation.prevEl = prevBtn.current;
+                        swiper.params.navigation.nextEl = nextBtn.current;
+                        swiper.params.scrollbar.el = scrollbar.current;
+                    }}
+                    scrollbar={{
+                        el: scrollbar,
+                        draggable: true,
+                    }}
+                    breakpoints={{
+                        600: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        autoplay: false,
+                        },
+                        1024: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        autoplay: false,
+                        },
+                        1300: {
+                        slidesPerView: 6,
+                        spaceBetween: 10,
+                        autoplay: false,
+                        },
+                    }}
+                    >
+                    {sameCollectionProducts?.map((product) => {
+                        return (
+                        <SwiperSlide key={product.id}>
+                            <div>
+                                <Card style={{width: 206, height: 250, objectFit: 'contain', cursor: 'pointer',}}>
+                                    {product.image ? (
+                                        <Card.Img className='mt-1' style={{width: 200, height: 240, marginLeft: 3, objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + product.image + '.webp'} />
+                                    ) : (
+                                        <Card.Img variant="top" src={process.env.REACT_APP_IMG_URL + product.image + '.webp'} />
+                                    )}
+                                </Card>
+                                <p>{product.name}</p>
+                            </div>
+                        </SwiperSlide>
+                        );
+                    })}
+                    </Swiper>
+                </div>
+            </Card>
         </Container>
     );
 };

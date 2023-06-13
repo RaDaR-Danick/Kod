@@ -1,4 +1,4 @@
-import { Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Container, Row, Col, Spinner, Card } from 'react-bootstrap';
 import SearchField from '../components/SearchField.js';
 import CategoryBar from '../components/CategoryBar.js';
 import BrandBar from '../components/BrandBar.js';
@@ -256,6 +256,9 @@ const Shop = observer(() => {
                     <div className="mt-3">{strapsFetching ? <Spinner animation="border" /> : <StrapBar />}</div>
                     <div className="mt-3">{powersFetching ? <Spinner animation="border" /> : <PowerBar />}</div>
                     <div className="mt-3">{watersFetching ? <Spinner animation="border" /> : <WaterBar />}</div>
+                    <Card className='mt-3' style={{height: '40px'}}>
+                        <a href='/shop' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
+                    </Card>
                 </Col>
                 <Col md={9}>
                     <div>{productsFetching ? (<Spinner animation="border" />) : (<ProductList sortOrder={sortOrder} />)}</div>

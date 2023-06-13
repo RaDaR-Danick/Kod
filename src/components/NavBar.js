@@ -1,7 +1,6 @@
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
-import './navbar.css'
 
 const NavBar = observer(() => {
     return (

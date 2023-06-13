@@ -1,8 +1,23 @@
-import { ListGroup } from 'react-bootstrap'
+import { Card, ListGroup } from 'react-bootstrap'
 import { useContext } from 'react'
 import { AppContext } from './AppContext.js'
 import { observer } from 'mobx-react-lite'
 import { useNavigate, createSearchParams } from 'react-router-dom'
+import styled from "styled-components";
+import UIDropdown from "./ui_dropdown.js";
+
+const UserCicle = styled.div`
+  margin-left: 12px;
+  margin-top: 5px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  width: 100%;
+  height: 36px;
+  font-size: 18px;
+  color: #000;
+  cursor: pointer;
+`;
 
 const MaterialBar = observer(() => {
     const { catalog } = useContext(AppContext)
@@ -33,18 +48,30 @@ const MaterialBar = observer(() => {
     }
 
     return (
-        <ListGroup>
-            {catalog.materials.map(item =>
-                <ListGroup.Item
-                    key={item.id}
-                    active={item.id === catalog.material}
-                    onClick={() => handleClick(item.id)}
-                    style={{cursor: 'pointer'}}
-                >
-                    {item.name}
-                </ListGroup.Item>
+        <Card>
+            <UIDropdown
+                render={(toggleShow) => <UserCicle onClick={toggleShow}>Материал корпуса</UserCicle>}
+                position={{
+                    top: "41px",
+                    left: "-1px",
+                }}
+            >
+                {(toggleShow) => (
+                <ListGroup style={{width:'306px'}}>
+                    {catalog.materials.map(item =>
+                        <ListGroup.Item
+                            key={item.id}
+                            active={item.id === catalog.material}
+                            onClick={() => handleClick(item.id)}
+                            style={{cursor: 'pointer'}}
+                        >
+                            {item.name}
+                        </ListGroup.Item>
+                    )}
+                </ListGroup>
             )}
-        </ListGroup>
+        </UIDropdown>
+    </Card>
     )
 })
 

@@ -1,8 +1,23 @@
-import { ListGroup } from 'react-bootstrap'
+import { Card, ListGroup } from 'react-bootstrap'
 import { useContext } from 'react'
 import { AppContext } from './AppContext.js'
 import { observer } from 'mobx-react-lite'
 import { useNavigate, createSearchParams } from 'react-router-dom'
+import styled from "styled-components";
+import UIDropdown from "./ui_dropdown.js";
+
+const UserCicle = styled.div`
+  margin-left: 12px;
+  margin-top: 5px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  width: 100%;
+  height: 36px;
+  font-size: 18px;
+  color: #000;
+  cursor: pointer;
+`;
 
 const PowerBar = observer(() => {
     const { catalog } = useContext(AppContext)
@@ -33,19 +48,31 @@ const PowerBar = observer(() => {
     }
 
     return (
-        <ListGroup>
-            {catalog.powers.map(item =>
-                <ListGroup.Item
-                    key={item.id}
-                    active={item.id === catalog.power}
-                    onClick={() => handleClick(item.id)}
-                    style={{cursor: 'pointer'}}
-                >
-                    {item.name}
-                </ListGroup.Item>
-            )}
-        </ListGroup>
-    )
+        <Card>
+            <UIDropdown
+                render={(toggleShow) => <UserCicle onClick={toggleShow}>Запас хода</UserCicle>}
+                position={{
+                    top: "41px",
+                    left: "-1px",
+                }}
+            >
+                {(toggleShow) => (
+                    <ListGroup style={{width:'306px'}}>
+                        {catalog.powers.map(item =>
+                            <ListGroup.Item
+                                key={item.id}
+                                active={item.id === catalog.power}
+                                onClick={() => handleClick(item.id)}
+                                style={{cursor: 'pointer'}}
+                            >
+                                {item.name}
+                            </ListGroup.Item>
+                        )}
+                    </ListGroup>
+                )}
+            </UIDropdown>
+        </Card>
+        )
 })
 
 export default PowerBar
