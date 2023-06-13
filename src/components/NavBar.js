@@ -13,7 +13,6 @@ const NavBar = observer(() => {
                     <NavLink to="/about" className="nav-link" style={{color: 'black', paddingRight: '80px'}}>О МАГАЗИНЕ</NavLink>
                     <NavLink to="/delivery" className="nav-link" style={{color: 'black', paddingRight: '80px'}}>ДОСТАВКА И ОПЛАТА</NavLink>
                     <NavLink to="/service" className="nav-link" style={{color: 'black', paddingRight: '80px'}}>СЕРВИС-ЦЕНТР</NavLink>
-                    <NavLink to="/contacts" className="nav-link" style={{color: 'black', paddingRight: '80px'}}>КОНТАКТЫ</NavLink>
                 </Nav>
             </Container>
         </Navbar>

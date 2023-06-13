@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap'
 const Basket = () => {
     return (
         <Container>
-            <h1>Корзина</h1>
+            <h1 style={{textAlign: 'center'}}>Корзина</h1>
             <BasketList />
         </Container>
     )
