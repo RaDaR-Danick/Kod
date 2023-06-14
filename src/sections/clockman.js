@@ -12,13 +12,13 @@ const ClockMan = () => {
                 <Row>
                     <Col md={6}>
                         <div>
-                            <a href='/shop/?gender=3'><img src={ clockman } alt="Купить мужские часы в Алматы" width='100%' /></a>
+                            <a href='/shop/?gender=3'><img src={ clockman } alt="Купить мужские часы в Алматы" width='100%' style={{boxShadow: '0 0 6px 6px #000' }} /></a>
                         </div>
                     </Col>
                     <Col md={6}>
                         <div>
                             <p style={{paddingBottom: 10, paddingTop: 10, textAlign: 'center', fontSize: 17}}>Большой выбор ассортимент моделей мужских часов от традиционных классических до инновационных спортивных.</p>
-                            <img src={ AN360059L} alt="Купить Citizen FET0P004W0 в Алматы" width='34%' style={{marginRight: '3%'}}/>
+                            <img src={ AN360059L} alt="Купить Citizen FET0P004W0 в Алматы" width='34%' style={{marginRight: '3%' }}/>
                             <img src={ KAM27146 } alt="Купить Calvin Klein KAM27146 в Алматы" width='27%' style={{marginRight: '3%'}}/>
                             <img src={ RAAK0403N10B } alt="Купить Orient FET0P004W0 в Алматы" width='30%'/>
                         </div>

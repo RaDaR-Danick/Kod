@@ -44,7 +44,7 @@ const About = () => {
                 <h1 style={{textAlign: 'center', fontWeight: 'normal'}}>Бренды</h1>
                 <Marquee pauseOnHover speed={200} style={{margin: '2%', width: '96%'}}>
                     <div>
-                        <a href='http://localhost:3000/shop?brand=1'><img src={ ck } alt="Купить часы Calvin Klein в Алматы" style={{height: '320px', marginLeft: 10}} /></a>
+                        <a href='http://localhost:3000/shop?brand=1'><img src={ ck } alt="Купить часы Calvin Klein в Алматы" style={{height: '320px', marginLeft: 10, }} /></a>
                     </div>
                     <div>
                         <a href='http://localhost:3000/shop?brand=2'><img src={ ak } alt="Купить часы Anne Klein в Алматы" style={{height: '320px', marginLeft: 10}} /></a>

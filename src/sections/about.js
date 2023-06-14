@@ -10,7 +10,7 @@ const About = () => {
                 <Row>
                 <Col md={6}>
                         <div>
-                            <a href='/shop'><img src={ fon } alt="Купить японские часы в Алматы" width='100%' /></a>
+                            <a href='/shop'><img src={ fon } alt="Купить японские часы в Алматы" width='100%' style={{padding: '3%'}} /></a>
                         </div>
                     </Col>
                     <Col md={6}>

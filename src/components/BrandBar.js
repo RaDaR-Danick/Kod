@@ -5,6 +5,8 @@ import { observer } from 'mobx-react-lite'
 import { useNavigate, createSearchParams } from 'react-router-dom'
 import styled from "styled-components";
 import UIDropdown from "./ui_dropdown.js";
+import down from "../assets/icon-planet.png";
+import up from "../assets/icon-box.png";
 
 const UserCicle = styled.div`
   margin-left: 12px;
