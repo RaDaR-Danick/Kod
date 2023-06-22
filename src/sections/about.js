@@ -25,7 +25,7 @@ const About = () => {
                                 первую очередь, потому что любим наше дело.
                             </p>
                             <p style={{textAlign: 'justify', fontSize: 17, width: '95%', marginLeft: 10}}>Наш магазин, специализируется на продаже оригинальных аксессуаров более 20 лет.</p>
-                            <a href='/shop'><img src={ go } alt="Купить швейцарские часы в Алматы" style={{width: '40%', marginLeft: '28%'}} /></a>
+                            <a href='/shop'><img class='scalecat' src={ go } alt="Купить швейцарские часы в Алматы" style={{width: '40%', marginLeft: '28%'}} /></a>
                         </div>
                     </Col>
                 </Row>

@@ -12,8 +12,8 @@ const Knife = () => {
                 <Col md={6}>
                         <div>
                             <p style={{paddingBottom: 50, textAlign: 'center', fontSize: 17}}>Компания Victorinox занимается производством уникальной высококачественной продукции для различных сфер жизни.</p>
-                            <img src={ MWN08623 } alt="Купить ручку Victorinox 1931494 в Алматы" width='47%' style={{marginRight: '3%'}}/>
-                            <img src={ V0824126 } alt="Купить ручку Waterman Victorinox в Алматы" width='47%' style={{marginRight: '3%'}}/>
+                            <img class='scale' src={ MWN08623 } alt="Купить ручку Victorinox 1931494 в Алматы" width='47%' style={{marginRight: '3%'}}/>
+                            <img class='scale' src={ V0824126 } alt="Купить ручку Waterman Victorinox в Алматы" width='47%' style={{marginRight: '3%'}}/>
                         </div>
                     </Col>
                     <Col md={6}>

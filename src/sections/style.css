@@ -1,0 +1,21 @@
+.scale {
+    transition: 1s;
+   }
+   .scale:hover {
+        transform: scale(1.12);
+   }
+.scalecat {
+    width:100%;
+    line-height:70px;
+    text-align:center;
+    border:2px solid #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 0 0px rgb(255, 255, 255);
+    transition: all 200ms ease-out;
+    transition: 1s;
+    box-shadow: '0 0 6px 6px #000' 
+    }
+    .scalecat:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgb(0, 0, 0);
+    }

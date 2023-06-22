@@ -42,36 +42,36 @@ const About = () => {
             </Card>
             <Card className='mt-4'>
                 <h1 style={{textAlign: 'center', fontWeight: 'normal'}}>Бренды</h1>
-                <Marquee pauseOnHover speed={200} style={{margin: '2%', width: '96%'}}>
-                    <div>
-                        <a href='http://localhost:3000/shop?brand=1'><img src={ ck } alt="Купить часы Calvin Klein в Алматы" style={{height: '320px', marginLeft: 10, }} /></a>
-                    </div>
-                    <div>
-                        <a href='http://localhost:3000/shop?brand=2'><img src={ ak } alt="Купить часы Anne Klein в Алматы" style={{height: '320px', marginLeft: 10}} /></a>
-                    </div>
+                <Marquee pauseOnHover speed={200} style={{margin: '2%', width: '96%', height: 360}}>
+                    
+                        <a href='http://localhost:3000/shop?brand=1'><img class='scale' src={ ck } alt="Купить часы Calvin Klein в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
+                    
+                    
+                        <a href='http://localhost:3000/shop?brand=2'><img class='scale' src={ ak } alt="Купить часы Anne Klein в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
+                    
                     <div>    
-                        <a href='http://localhost:3000/shop?brand=8'><img src={ swatch } alt="Купить часы Swatch в Алматы" style={{height: '320px', marginLeft: 10}} /></a>
+                        <a href='http://localhost:3000/shop?brand=8'><img class='scale' src={ swatch } alt="Купить часы Swatch в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
                     </div>
                     <div>
-                        <a href='http://localhost:3000/shop?brand=6'><img src={ orient } alt="Купить часы Orient в Алматы" style={{height: '320px', marginLeft: 10}} /></a>
+                        <a href='http://localhost:3000/shop?brand=6'><img class='scale' src={ orient } alt="Купить часы Orient в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
                     </div>
                     <div>
-                        <a href='http://localhost:3000/shop?brand=3'><img src={ citizen } alt="Купить часы Citizen в Алматы" style={{height: '320px', marginLeft: 10}} /></a>
+                        <a href='http://localhost:3000/shop?brand=3'><img class='scale' src={ citizen } alt="Купить часы Citizen в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
                     </div>
                     <div>
-                        <a href='http://localhost:3000/shop?brand=4'><img src={ diesel } alt="Купить часы Diesel в Алматы" style={{height: '320px', marginLeft: 10}} /></a>
+                        <a href='http://localhost:3000/shop?brand=4'><img class='scale' src={ diesel } alt="Купить часы Diesel в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
                     </div>
                     <div>
-                        <a href='http://localhost:3000/shop?brand=7'><img src={ parker } alt="Купить ручку Parker в Алматы" style={{height: '320px', marginLeft: 10}} /></a>
+                        <a href='http://localhost:3000/shop?brand=7'><img class='scale' src={ parker } alt="Купить ручку Parker в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
                     </div>
                     <div>
-                        <a href='http://localhost:3000/shop?brand=10'><img src={ waterman } alt="Купить ручку Waterman в Алматы" style={{height: '320px', marginLeft: 10}} /></a>
+                        <a href='http://localhost:3000/shop?brand=10'><img class='scale' src={ waterman } alt="Купить ручку Waterman в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
                     </div>
                     <div>
-                        <a href='http://localhost:3000/shop?brand=5'><img src={ lamy } alt="Купить ручку Lamy в Алматы" style={{height: '320px', marginLeft: 10}} /></a>
+                        <a href='http://localhost:3000/shop?brand=5'><img class='scale' src={ lamy } alt="Купить ручку Lamy в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
                     </div>
                     <div>
-                        <a href='http://localhost:3000/shop?brand=9'><img src={ victorinox } alt="Купить набор Victorinox в Алматы" style={{height: '320px', marginLeft: 10}} /></a>
+                        <a href='http://localhost:3000/shop?brand=9'><img class='scale' src={ victorinox } alt="Купить набор Victorinox в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
                     </div>
                 </Marquee>
             </Card>

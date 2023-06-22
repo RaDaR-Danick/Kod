@@ -18,11 +18,11 @@ const Service = () => {
                 <Row>
                     <Col md={4}>
                         <div style={{ display: 'flex'}}>
-                            <a href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
+                            <a class='scale' href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
                                 <img src={ sws1 } alt="Мелкий ремонт наручных часов в Алматы - SWService" style={{width: '100%', padding: '2%', paddingLeft: '2%' }} />
                                 <p>МЕЛКИЙ РЕМОНТ</p>
                             </a>
-                             <a href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
+                             <a class='scale' href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
                                 <img src={ sws2 } alt="Замена стекла на наручных часах в Алматы - SWService" style={{width: '100%', padding: '2%'}} />
                                 <p>ЗАМЕНА СТЕКЛА</p>
                             </a>
@@ -30,11 +30,11 @@ const Service = () => {
                     </Col>
                     <Col md={4}>
                         <div style={{ display: 'flex' }}>
-                            <a href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
+                            <a class='scale' href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
                                 <img src={ sws3 } alt="Ремонт ремешка наручных часов в Алматы - SWService" style={{width: '100%', padding: '2%'}} />
                                 <p>РЕМОНТ РЕМЕШКА</p>
                             </a>
-                            <a href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
+                            <a class='scale' href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
                                 <img src={ sws4 } alt="Проверка на гермитичность наручных часов в Алматы - SWService" style={{width: '100%', padding: '2%'}} />
                                 <p>ГЕРМЕТИЧНОСТЬ</p>
                             </a>
@@ -42,11 +42,11 @@ const Service = () => {
                     </Col>
                     <Col md={4}>
                         <div style={{ display: 'flex'}}>
-                            <a href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
+                            <a class='scale' href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
                                 <img src={ sws5 } alt="Сложный ремонт наручных часов в Алматы - SWService" style={{width: '100%', padding: '2%'}} />
                                 <p>СЛОЖНЫЙ РЕМОНТ</p>
                             </a>
-                            <a href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
+                            <a class='scale' href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
                                 <img src={ sws6 } alt="Репассаж наручных часов в Алматы - SWService" style={{width: '100%', padding: '2%'}} />
                                 <p>РЕПАССАЖ</p>
                             </a>

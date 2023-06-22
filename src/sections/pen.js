@@ -17,8 +17,8 @@ const Pen = () => {
                     <Col md={6}>
                         <div>
                             <p style={{paddingBottom: 50, paddingTop: 10, textAlign: 'center', fontSize: 17}}>Перьевые ручки Parker и Waterman известны каждому, кто ценит роскошные и качественные аксессуары, выполненные в стильном дизайне.</p>
-                            <img src={ P1931494 } alt="Купить ручку Parker 1931494 в Алматы" width='47%' style={{marginRight: '3%'}}/>
-                            <img src={ S0637020 } alt="Купить ручку Waterman 1931494 в Алматы" width='47%' style={{marginRight: '3%'}}/>
+                            <img class='scale' src={ P1931494 } alt="Купить ручку Parker 1931494 в Алматы" width='47%' style={{marginRight: '3%'}}/>
+                            <img class='scale' src={ S0637020 } alt="Купить ручку Waterman 1931494 в Алматы" width='47%' style={{marginRight: '3%'}}/>
                         </div>
                     </Col>
                 </Row>
