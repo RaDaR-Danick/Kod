@@ -6,7 +6,7 @@ import panel from '../assets/panel.png'
 import { Link, NavLink } from 'react-router-dom'
 import { AppContext } from '../components/AppContext'
 import { useContext } from 'react'
-import NavBar from '../components/NavBar'
+import NavBar from '../components/navigation/NavBar'
 import Top from './top.js'
 import { Col, Nav, Row } from 'react-bootstrap'
 
