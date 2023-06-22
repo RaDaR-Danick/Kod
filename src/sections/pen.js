@@ -11,7 +11,7 @@ const Pen = () => {
                 <Row>
                 <Col md={6}>
                         <div>
-                            <a href='/shop/?gender=3'><img src={ pen } alt="Купить мужские часы в Алматы" width='100%' style={{boxShadow: '0 0 6px 6px #000' }} /></a>
+                            <a href='/shop/?gender=3'><img class='two' src={ pen } alt="Купить мужские часы в Алматы" width='100%' style={{boxShadow: '0 0 6px 6px #000' }} /></a>
                         </div>
                     </Col>
                     <Col md={6}>

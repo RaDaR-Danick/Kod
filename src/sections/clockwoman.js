@@ -8,7 +8,7 @@ import AK2972MPRG from "../assets/categories/AK2972MPRG.webp"
 const ClockWoman = () => {
     return (
         <Container className='mt-4'>
-            <Card>
+            <Card style={{display: 'flex', flexWrap: 'nowrap'}}>
                 <Row>
                     <Col md={6}>
                         <div>
@@ -20,7 +20,7 @@ const ClockWoman = () => {
                     </Col>
                     <Col md={6}>
                         <div>
-                            <a href='/shop/?gender=2'><img src={ clockwoman } alt="Купить мужские часы в Алматы" width='100%' style={{boxShadow: '0 0 6px 6px #000' }} /></a>
+                            <a href='/shop/?gender=2'><img class='two' src={ clockwoman } alt="Купить мужские часы в Алматы" width='100%' style={{boxShadow: '0 0 6px 6px #000' }} /></a>
                         </div>
                     </Col>
                 </Row>

@@ -4,6 +4,7 @@
    .scale:hover {
         transform: scale(1.12);
    }
+
 .scalecat {
     width:100%;
     line-height:70px;
@@ -19,3 +20,10 @@
         transform: scale(1.05);
         box-shadow: 0 0 10px rgb(0, 0, 0);
     }
+
+.two {
+        transition: 1s;
+       }
+       .two:hover {
+            transform: scale(1.05);
+       }
