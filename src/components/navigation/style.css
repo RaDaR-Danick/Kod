@@ -1,3 +1,20 @@
+.link {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.link:hover {
+    color: #1200ba;
+    font-weight: bold;
+}
+
+.link:focus {
+    color: #1200ba;
+    font-weight: bold;
+}
+
 .hide-on-mobile { display: inline; }
 @media only screen
     and (min-device-width : 320px)
