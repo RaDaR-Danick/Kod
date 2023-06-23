@@ -1,3 +1,4 @@
+import MobileMenu from './mobileMenu.js'
 import Container from 'react-bootstrap/Container'
 import logo from '../assets/logo.png'
 import login from '../assets/login.png'
@@ -14,6 +15,7 @@ const Header = () => {
     const { user, basket } = useContext(AppContext)
     return (
         <Container>
+            <MobileMenu />
             <Top />
             <Row className="mt-4">
                 <Nav  className="ml-auto">
@@ -37,7 +39,7 @@ const Header = () => {
                     </Link>
                 </Nav>
             </Row>
-            <NavBar />
+            <NavBar className='mt-4' />
         </Container>
     )
 }

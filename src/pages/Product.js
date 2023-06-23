@@ -1,6 +1,6 @@
 import { Container, Row, Col, Button, Image, Spinner, Table, Card} from "react-bootstrap";
 import { useEffect, useState, useContext, useRef } from "react";
-import { fetchOneProduct, fetchProdRating, fetchCategoryProducts} from "../http/catalogAPI.js";
+import { fetchOneProduct, fetchCategoryProducts} from "../http/catalogAPI.js";
 import { useParams } from "react-router-dom";
 import { append } from "../http/basketAPI.js";
 import { AppContext } from "../components/AppContext.js";
@@ -18,17 +18,12 @@ const Product = () => {
     const { id } = useParams();
     const { basket } = useContext(AppContext);
     const [product, setProduct] = useState(null);
-    const [rating, setRating] = useState(null);
     const [sameCollectionProducts, setSameCollectionProducts] = useState(null);
 
     useEffect(() => {
         fetchOneProduct(id)
             .then((data) => setProduct(data))
             .catch((error) => console.error("Error fetching product:", error));
-    
-        fetchProdRating(id)
-            .then((data) => setRating(data))
-            .catch((error) => console.error("Error fetching product rating:", error));
     
         fetchCategoryProducts(id)
             .then((data) => setSameCollectionProducts(data))
@@ -79,7 +74,7 @@ const Product = () => {
                 <Row>
                     <Col>
                         <h4>Характеристики:</h4>
-                        <Table bordered hover size="sm" className="mt-4">
+                        <Table bordered hover size="sm" className="mt-4" class='hide-on-mobile'>
                             <tbody style={{fontSize: 18}}>
                                 <tr height='40px' style={{textAlign: "center", verticalAlign: 'middle'}}>
                                     <th style={{textAlign: "left"}}>Бренд</th>
@@ -119,6 +114,17 @@ const Product = () => {
                                 </tr>
                             </tbody>
                         </Table>
+                        <div className="show-on-mobile ">
+                            <p>Бренд: {product.brand.name}</p>
+                            <p>Тип механизма: {product.mehanizm.name}</p>
+                            <p>Пол: {product.gender.name}</p>
+                            <p>Форма корпуса: {product.shape.name}</p>
+                            <p>Материал корпуса: {product.material.name}</p>
+                            <p>Стекло: {product.glass.name}</p>
+                            <p>Материал ремешка/браслета: {product.strap.name}</p>
+                            <p>Запас хода: {product.power.name}</p>
+                            <p>Водонепроницаемость: {product.water.name}</p>
+                        </div>
                     </Col>
                 </Row>
             </Card>
@@ -165,9 +171,9 @@ const Product = () => {
                     >
                     {sameCollectionProducts?.map((product) => {
                         return (
-                        <SwiperSlide key={product.id}>
+                        <SwiperSlide key={product.id} style={{textAlign: 'center'}}>
                             <div>
-                                <Card style={{width: 206, height: 250, objectFit: 'contain', cursor: 'pointer',}}>
+                                <Card style={{width: 206, height: 250, objectFit: 'contain', cursor: 'pointer'}}>
                                     {product.image ? (
                                         <Card.Img className='mt-1' style={{width: 200, height: 240, marginLeft: 3, objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + product.image + '.webp'} />
                                     ) : (

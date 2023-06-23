@@ -13,14 +13,14 @@ export default function CarouselBox() {
             <Carousel className='b-1'>
                 <Carousel.Item>
                     <img className="b-block w-100" src={ ck } alt="Купить Calvin Klein в Алматы"/>
-                    <Carousel.Caption>
+                    <Carousel.Caption className='hide-on-mobile'>
                         <h3 style={{color: "black"}}>Calvin Klein</h3>
                         <p style={{color: "black"}}>Чистота, элегантность и сексуальность — вот основа и фирменный стиль.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img className="b-block w-100" src={ orient } alt="Купить Orient в Алматы" />
-                    <Carousel.Caption>
+                    <Carousel.Caption className='hide-on-mobile'>
                         <h3>Orient</h3>
                         <p>Высокое качество, стильный дизайн, популярный во всем мире.</p>
                     </Carousel.Caption>
@@ -34,14 +34,14 @@ export default function CarouselBox() {
                     </Carousel.Item>
                 <Carousel.Item>
                     <img className="b-block w-100" src={ victorinox } alt="Купить Victorinox в Алматы" />
-                    <Carousel.Caption>
+                    <Carousel.Caption className='hide-on-mobile'>
                         <h3 style={{color: "black"}}>Victorinox</h3>
                         <p style={{color: "black"}}>Классически универсальное швейцарское армейское наследие</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img className="b-block w-100" src={ parker } alt="Купить Parker в Алматы" />
-                    <Carousel.Caption>
+                    <Carousel.Caption className='hide-on-mobile'>
                         <h3>Parker</h3>
                         <p>Яркий представитель легендарного бренда</p>
                     </Carousel.Caption>
