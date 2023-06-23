@@ -11,7 +11,6 @@ const Top = () => {
                 <a style={{color: "#1200ba", fontSize: 17, fontWeight: 'bold'}}>СЕРВИС-ЦЕНТР </a>
                 <a href="tel:+77272727441" style={{fontSize: 17, fontWeight: 'bold', color: "#1200ba", textDecoration: "none"}}>+7 (727) 272-74-41</a>
             </div>
-            
         </Container>
     )
 }
