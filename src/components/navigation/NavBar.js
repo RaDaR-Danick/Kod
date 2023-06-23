@@ -29,16 +29,16 @@ const NavBar = observer(() => {
                             {(toggleShow) => (
                                 <Card style={{marginTop: '14px', width: '160px'}}>
                                     <ListGroup style={{width:'130px', background: "white"}}>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=2" className="link">ANNE KLEIN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=1" className="link">CALVIN KLEIN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=3" className="link">CITIZEN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=4" className="link">DIESEL</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/service" className="link">LAMY</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=6" className="link">ORIENT</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/service" className="link">PARKER</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=8" className="link">SWATCH</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/victorinox" className="link">VICTORINOX</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/service" className="link">WATERMAN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=2" className="link" target='_parent'>ANNE KLEIN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=1" className="link" target='_parent'>CALVIN KLEIN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=3" className="link" target='_parent'>CITIZEN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=4" className="link" target='_parent'>DIESEL</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/service" className="link" target='_parent'>LAMY</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=6" className="link" target='_parent'>ORIENT</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/service" className="link" target='_parent'>PARKER</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=8" className="link" target='_parent'>SWATCH</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/victorinox" className="link" target='_parent'>VICTORINOX</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/service" className="link" target='_parent'>WATERMAN</NavLink>
                                     </ListGroup>
                                 </Card>
                             )}

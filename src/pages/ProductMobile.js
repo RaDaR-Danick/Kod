@@ -1,20 +1,13 @@
 import { Container, Row, Col, Button, Image, Spinner, Card} from "react-bootstrap";
-import { useEffect, useState, useContext, useRef } from "react";
+import { useEffect, useState, useContext } from "react";
 import { fetchOneProduct, fetchCategoryProducts} from "../http/catalogAPI.js";
 import { useParams } from "react-router-dom";
 import { append } from "../http/basketAPI.js";
 import { AppContext } from "../components/AppContext.js";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar} from "swiper";
-import "swiper/css";
 import planet from "../assets/icon-planet.png";
 import box from "../assets/icon-box.png";
 
-const Product = () => {
-    SwiperCore.use([Autoplay, Navigation, Pagination]);
-    const prevBtn = useRef();
-    const nextBtn = useRef();
-    const scrollbar = useRef();
+const ProductMobile = () => {
     const { id } = useParams();
     const { basket } = useContext(AppContext);
     const [product, setProduct] = useState(null);
@@ -79,67 +72,8 @@ const Product = () => {
                     </Col>
                 </Row>
             </Card>
-            <Card className="mt-4" style={{padding: '2%'}}>
-                <div>
-                    <h4 className="mb-4">Сопутствующие товары:</h4>
-                    <Swiper
-                        spaceBetween={20}
-                        slidesPerView={1}
-                        modules={[Navigation, Scrollbar]}
-                        autoplay={{ delay: 3000 }}
-                        pagination={{ el: ".swiper-pagination", clickable: true }}
-                        navigation={{
-                            prevEl: prevBtn.current,
-                            nextEl: nextBtn.current,
-                    }}
-                    onBeforeInit={(swiper) => {
-                        swiper.params.navigation.prevEl = prevBtn.current;
-                        swiper.params.navigation.nextEl = nextBtn.current;
-                        swiper.params.scrollbar.el = scrollbar.current;
-                    }}
-                    scrollbar={{
-                        el: scrollbar,
-                        draggable: true,
-                    }}
-                    breakpoints={{
-                        600: {
-                        slidesPerView: 1,
-                        spaceBetween: 10,
-                        autoplay: false,
-                        },
-                        1024: {
-                        slidesPerView: 1,
-                        spaceBetween: 10,
-                        autoplay: false,
-                        },
-                        1300: {
-                        slidesPerView: 6,
-                        spaceBetween: 10,
-                        autoplay: false,
-                        },
-                    }}
-                    >
-                    {sameCollectionProducts?.map((product) => {
-                        return (
-                        <SwiperSlide key={product.id}>
-                            <div>
-                                <Card style={{width: 206, height: 250, objectFit: 'contain', cursor: 'pointer'}}>
-                                    {product.image ? (
-                                        <Card.Img className='mt-1' style={{width: 200, height: 240, marginLeft: 3, objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + product.image + '.webp'} />
-                                    ) : (
-                                        <Card.Img variant="top" src={process.env.REACT_APP_IMG_URL + product.image + '.webp'} />
-                                    )}
-                                </Card>
-                                <p>{product.name}</p>
-                            </div>
-                        </SwiperSlide>
-                        );
-                    })}
-                    </Swiper>
-                </div>
-            </Card>
         </Container>
     );
 };
 
-export default Product;
+export default ProductMobile;

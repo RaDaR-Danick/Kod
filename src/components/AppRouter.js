@@ -6,6 +6,7 @@ import Signup from '../pages/Signup.js'
 import Basket from '../pages/Basket.js'
 import Checkout from '../pages/Checkout.js'
 import Product from '../pages/Product.js'
+import ProductMobile from '../pages/ProductMobile.js'
 import About from '../pages/About.js'
 import Delivery from '../pages/Delivery.js'
 import Service from '../pages/Service.js'
@@ -38,6 +39,7 @@ const publicRoutes = [
     {path: '/login', Component: Login},
     {path: '/signup', Component: Signup},
     {path: '/product/:id', Component: Product},
+    {path: '/productmobile/:id', Component: ProductMobile},
     {path: '/basket', Component: Basket},
     {path: '/checkout', Component: Checkout},
     {path: '/about', Component: About},

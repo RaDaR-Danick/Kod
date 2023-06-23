@@ -7,13 +7,13 @@ const Menu = ({header, items, active, setActive}) => {
             <div className={active ? 'menuActive' : 'menu'}>
                 <div className="menu__content">
                     <div className="menu__header">{header}</div>
-                    <ul>
+                    <ur>
                         {items.map (item =>
                         <li  style={{listStyleType: 'none', borderBottom: "1px solid #1200ba"}}>
                             <a href={item.href}>{item.value}</a>
                         </li>   
                         )}
-                    </ul>
+                    </ur>
                 </div>
             </div>
         </Container>
