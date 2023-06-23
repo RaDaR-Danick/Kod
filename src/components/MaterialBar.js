@@ -5,6 +5,8 @@ import { observer } from 'mobx-react-lite'
 import { useNavigate, createSearchParams } from 'react-router-dom'
 import styled from "styled-components";
 import UIDropdown from "./ui_dropdown.js";
+import bar from "../assets/bar.png";
+import './style.css'
 
 const UserCicle = styled.div`
   margin-left: 12px;
@@ -50,7 +52,10 @@ const MaterialBar = observer(() => {
     return (
         <Card>
             <UIDropdown
-                render={(toggleShow) => <UserCicle onClick={toggleShow}>Материал корпуса</UserCicle>}
+                render={(toggleShow) => <UserCicle className="d-flex justify-content-between pl-3 pr-3" onClick={toggleShow}>
+                    Материал корпуса
+                    <img src={ bar } alt="bar" className='circle'/>
+                </UserCicle>}
                 position={{
                     top: "41px",
                     left: "-1px",

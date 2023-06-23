@@ -1,0 +1,15 @@
+.circle {
+    width: 15px;
+    height: 15px;
+    margin-right: 20px;
+    margin-top: 8px;
+    transition: all 0.5s linear;
+}
+
+.circle:hover {
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+   }
