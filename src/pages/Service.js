@@ -22,9 +22,9 @@ const Service = () => {
                                 <img src={ sws1 } alt="Мелкий ремонт наручных часов в Алматы - SWService" style={{width: '100%', padding: '2%', paddingLeft: '2%' }} />
                                 <p>МЕЛКИЙ РЕМОНТ</p>
                             </a>
-                             <a class='scale' href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
-                                <img src={ sws2 } alt="Замена стекла на наручных часах в Алматы - SWService" style={{width: '100%', padding: '2%'}} />
-                                <p>ЗАМЕНА СТЕКЛА</p>
+                            <a class='scale' href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
+                                <img src={ sws5 } alt="Сложный ремонт наручных часов в Алматы - SWService" style={{width: '100%', padding: '2%'}} />
+                                <p>СЛОЖНЫЙ РЕМОНТ</p>
                             </a>
                         </div>
                     </Col>
@@ -35,20 +35,20 @@ const Service = () => {
                                 <p>РЕМОНТ РЕМЕШКА</p>
                             </a>
                             <a class='scale' href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
-                                <img src={ sws4 } alt="Проверка на гермитичность наручных часов в Алматы - SWService" style={{width: '100%', padding: '2%'}} />
-                                <p>ГЕРМЕТИЧНОСТЬ</p>
+                                <img src={ sws2 } alt="Замена стекла на наручных часах в Алматы - SWService" style={{width: '100%', padding: '2%'}} />
+                                <p>ЗАМЕНА СТЕКЛА</p>
                             </a>
                         </div>
                     </Col>
                     <Col md={4}>
                         <div style={{ display: 'flex'}}>
                             <a class='scale' href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
-                                <img src={ sws5 } alt="Сложный ремонт наручных часов в Алматы - SWService" style={{width: '100%', padding: '2%'}} />
-                                <p>СЛОЖНЫЙ РЕМОНТ</p>
-                            </a>
-                            <a class='scale' href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
                                 <img src={ sws6 } alt="Репассаж наручных часов в Алматы - SWService" style={{width: '100%', padding: '2%'}} />
                                 <p>РЕПАССАЖ</p>
+                            </a>
+                            <a class='scale' href='https://sws.kz/uslugi' target='_blank' style={{textAlign: 'center', color: 'black', textDecoration: 'none'}}>
+                                <img src={ sws4 } alt="Проверка на гермитичность наручных часов в Алматы - SWService" style={{width: '100%', padding: '2%'}} />
+                                <p>ГЕРМЕТИЧНОСТЬ</p>
                             </a>
                         </div>
                     </Col>

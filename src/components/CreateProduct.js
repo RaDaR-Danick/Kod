@@ -3,8 +3,8 @@ import { createProduct, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, 
 import { useState, useEffect } from 'react'
 import CreateProperties from './CreateProperties.js'
 
-const defaultValue = {name: '', price: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: '', image: ''}
-const defaultValid = {name: null, price: null, brand: null, mehanizm: null, gender: null, shape: null, material: null, glass: null, strap: null, power: null, water: null, image: null}
+const defaultValue = {name: '', price: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: ''}
+const defaultValid = {name: null, price: null, brand: null, mehanizm: null, gender: null, shape: null, material: null, glass: null, strap: null, power: null, water: null}
 
 const isValid = (value) => {
     const result = {}
@@ -21,7 +21,6 @@ const isValid = (value) => {
         if (key === 'strap') result.strap = pattern.test(value.strap)
         if (key === 'power') result.power = pattern.test(value.power)
         if (key === 'water') result.water = pattern.test(value.water)
-        if (key === 'image') result.image = value.image.trim() !== ''
     }
     return result
 }
@@ -47,7 +46,7 @@ const CreateProduct = (props) => {
             .then(
                 data => setBrands(data)
             )
-        fetchMehanizms()
+            fetchMehanizms()
             .then(
                 data => setMehanizms(data)
             )
@@ -88,16 +87,14 @@ const CreateProduct = (props) => {
     }
 
     const handleImageChange = (event) => {
-        const data = {...value, [event.target.image]: event.target.value}
-        setValue(data)
-        setValid(isValid(data))
+        setImage(event.target.files[0])
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
         const correct = isValid(value)
         setValid(correct)
-        if (correct.name && correct.price && correct.brand && correct.mehanizm && correct.gender && correct.shape && correct.material && correct.glass && correct.strap && correct.power && correct.water && correct.image) {
+        if (correct.name && correct.price && correct.brand && correct.mehanizm && correct.gender && correct.shape && correct.material && correct.glass && correct.strap && correct.power && correct.water) {
 
             const data = new FormData()
             data.append('name', value.name.trim())
@@ -111,7 +108,7 @@ const CreateProduct = (props) => {
             data.append('strapId', value.strap)
             data.append('powerId', value.power)
             data.append('waterId', value.water)
-            data.append('image', value.image.trim())
+            if (image) data.append('image', image, image.name)
             if (properties.length) {
                 const props = properties.filter(
                     prop => prop.name.trim() !== '' && prop.value.trim() !== ''
@@ -124,7 +121,7 @@ const CreateProduct = (props) => {
             createProduct(data)
                 .then(
                     data => {
-                        
+                        event.target.image.value = ''
                         setValue(defaultValue)
                         setValid(defaultValid)
                         setProperties([])
@@ -301,10 +298,8 @@ const CreateProduct = (props) => {
                         <Col>
                             <Form.Control
                                 name="image"
-                                value={value.image}
-                                onChange={e => handleInputChange(e)}
-                                isValid={valid.image === true}
-                                isInvalid={valid.image === false}
+                                type="file"
+                                onChange={e => handleImageChange(e)}
                                 placeholder="Фото товара..."
                             />
                         </Col>

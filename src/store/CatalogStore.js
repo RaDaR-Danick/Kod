@@ -28,6 +28,7 @@ class CatalogStore {
     _searchTerm = "";
 	_minPrice = 0;
 	_maxPrice = 0;
+    _image
 
     constructor() {
         makeAutoObservable(this);
