@@ -48,7 +48,7 @@ const Product = () => {
                         {product.image ? (
                             <Image
                                 width={300}
-                                src={process.env.REACT_APP_IMG_URL + product.image + ".webp"}
+                                src={'/' + product.image}
                                 style={{marginTop: 50}}
                             />
                         ) : (

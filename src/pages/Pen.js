@@ -8,12 +8,10 @@ import ShapeBar from '../components/ShapeBar.js';
 import MaterialBar from '../components/MaterialBar.js';
 import GlassBar from '../components/GlassBar.js';
 import StrapBar from '../components/StrapBar.js';
-import PowerBar from '../components/PowerBar.js';
-import WaterBar from '../components/WaterBar.js';
 import ProductList from '../components/ProductList.js';
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../components/AppContext.js';
-import {fetchCategories, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, fetchWaters, fetchAllProducts} from '../http/catalogAPI.js';
+import {fetchCategories, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, fetchMaterials, fetchGlasses, fetchStraps, fetchAllProducts} from '../http/catalogAPI.js';
 import { observer } from 'mobx-react-lite';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import ProductsSort from '../components/PrtoductsSort.js';
@@ -53,22 +51,14 @@ const getSearchParams = (searchParams) => {
     if (strap && /[1-9][0-9]*/.test(strap)) {
         strap = parseInt(strap);
     }
-    let power = searchParams.get('power');
-    if (power && /[1-9][0-9]*/.test(power)) {
-        power = parseInt(power);
-    }
-    let water = searchParams.get('water');
-    if (water && /[1-9][0-9]*/.test(water)) {
-        water = parseInt(water);
-    }
     let page = searchParams.get('page');
     if (page && /[1-9][0-9]*/.test(page)) {
       page = parseInt(page);
     }
-    return { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, page };
+    return { category, brand, mehanizm, gender, shape, material, glass, strap, page };
   };
 
-const Shop = observer(() => {
+const Pen = observer(() => {
     const { catalog } = useContext(AppContext);
     const [categoriesFetching, setCategoriesFetching] = useState(true);
     const [brandsFetching, setBrandsFetching] = useState(true);
@@ -78,8 +68,6 @@ const Shop = observer(() => {
     const [materialsFetching, setMaterialsFetching] = useState(true);
     const [glassesFetching, setGlassesFetching] = useState(true);
     const [strapsFetching, setStrapsFetching] = useState(true);
-    const [powersFetching, setPowersFetching] = useState(true);
-    const [watersFetching, setWatersFetching] = useState(true);
     const [productsFetching, setProductsFetching] = useState(true);
     const [sortOrder, setSortOrder] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
@@ -127,16 +115,8 @@ const Shop = observer(() => {
     fetchStraps()
         .then((data) => (catalog.straps = data))
         .finally(() => setStrapsFetching(false));
-
-    fetchPowers()
-        .then((data) => (catalog.powers = data))
-        .finally(() => setPowersFetching(false));
-
-    fetchWaters()
-        .then((data) => (catalog.waters = data))
-        .finally(() => setWatersFetching(false));  
     
-        const { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, page } =
+        const { category, brand, mehanizm, gender, shape, material, glass, strap, page } =
         getSearchParams(searchParams);
         catalog.category = category;
         catalog.brand = brand;
@@ -146,14 +126,12 @@ const Shop = observer(() => {
         catalog.material = material;
         catalog.glass = glass;
         catalog.strap = strap;
-        catalog.power = power;
-        catalog.water = water;
         catalog.page = page ?? 1;
     }, []);
 
     useEffect(() => {
-        const { category, brand, mehanizm, shape, gender, material, glass, strap, power, water, page } = getSearchParams(searchParams);
-        if (category || brand || mehanizm || gender || shape || material || glass || strap || power || water || page) {
+        const { category, brand, mehanizm, shape, gender, material, glass, strap, page } = getSearchParams(searchParams);
+        if (category || brand || mehanizm || gender || shape || material || glass || strap || page) {
             if (category !== catalog.category) {catalog.category = category}
             if (brand !== catalog.brand) {catalog.brand = brand}
             if (mehanizm !== catalog.mehanizm) {catalog.mehanizm = mehanizm}
@@ -162,8 +140,6 @@ const Shop = observer(() => {
             if (material !== catalog.material) {catalog.material = material}
             if (glass !== catalog.glass) {catalog.glass = glass}
             if (strap !== catalog.strap) {catalog.strap = strap}
-            if (power !== catalog.power) {catalog.power = power}
-            if (water !== catalog.water) {catalog.water = water}
             if (page !== catalog.page) {catalog.page = page ?? 1}
         } else {
             catalog.category = null;
@@ -174,8 +150,6 @@ const Shop = observer(() => {
             catalog.material = null;
             catalog.glass = null;
             catalog.strap = null;
-            catalog.power = null;
-            catalog.water = null;
             catalog.page = 1;
         }
     }, [location.search]);
@@ -192,8 +166,6 @@ const Shop = observer(() => {
             catalog.material,
             catalog.glass,
             catalog.strap,
-            catalog.power,
-            catalog.water,
             catalog.page,
             catalog.limit,
             sortOrder,
@@ -220,8 +192,6 @@ const Shop = observer(() => {
         catalog.material,
         catalog.glass,
         catalog.strap,
-        catalog.power,
-        catalog.water,
         catalog.page,
         catalog.minPrice,
         catalog.maxPrice,
@@ -234,7 +204,7 @@ const Shop = observer(() => {
         <Container>
             <Row className="mt-4">
                 <Col md={3}>
-                    
+                    <div>Каталог товаров</div>
                 </Col>
                 <Col mt={5}>
                     <SearchField onSearch={setSearchTerm} />
@@ -254,8 +224,6 @@ const Shop = observer(() => {
                     <div className="mt-3">{materialsFetching ? <Spinner animation="border" /> : <MaterialBar />}</div>
                     <div className="mt-3">{glassesFetching ? <Spinner animation="border" /> : <GlassBar />}</div>
                     <div className="mt-3">{strapsFetching ? <Spinner animation="border" /> : <StrapBar />}</div>
-                    <div className="mt-3">{powersFetching ? <Spinner animation="border" /> : <PowerBar />}</div>
-                    <div className="mt-3">{watersFetching ? <Spinner animation="border" /> : <WaterBar />}</div>
                     <Card className='mt-3' style={{height: '40px'}}>
                         <a href='/shop' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
                     </Card>
@@ -268,4 +236,4 @@ const Shop = observer(() => {
     );
 });
 
-export default Shop;
+export default Pen;
