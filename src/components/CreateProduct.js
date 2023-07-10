@@ -298,8 +298,10 @@ const CreateProduct = (props) => {
                         <Col>
                             <Form.Control
                                 name="image"
-                                type="file"
-                                onChange={e => handleImageChange(e)}
+                                value={value.image}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.image === true}
+                                isInvalid={valid.imege === false}
                                 placeholder="Фото товара..."
                             />
                         </Col>

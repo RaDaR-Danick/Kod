@@ -19,6 +19,7 @@ import { useLocation, useSearchParams } from 'react-router-dom';
 import ProductsSort from '../components/PrtoductsSort.js';
 import PriceSlider from '../components/PriceSlider/PriceSlider.jsx';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const getSearchParams = (searchParams) => {
     let category = searchParams.get('category');
@@ -232,6 +233,11 @@ const Shop = observer(() => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Купить наручные часы в Алматы</title>
+                <meta name="description" content="Онлайн магазин часов"/>
+                <meta name="keywords" content="купить наручные часы в Алматы, наручные часы в Алматы, часы в Алматы, купить наручные часы, наручные часы, часы" />
+            </Helmet>
             <Row className="mt-4">
                 <Col md={3}>
                     

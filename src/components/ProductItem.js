@@ -8,9 +8,9 @@ const ProductItem = ({data}) => {
         <Col xl={3} lg={4} sm={3} style={{marginBottom: 10}} onClick={() => navigate(`/productmobile/${data.id}`)}>
             <Card style={{width: '100%', height: '460px', objectFit: 'contain', cursor: 'pointer'}}>
                 {data.image ? (
-                    <Card.Img class='scale' className='mt-1' style={{width: '100%', height: '360px', marginLeft: 'auto', marginRight: 'auto', objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + data.image + '.webp'} />
+                    <Card.Img class='scale' className='mt-1' style={{width: '100%', height: '360px', marginLeft: 'auto', marginRight: 'auto', objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + data.image} />
                 ) : (
-                    <Card.Img class='scale' variant="top" src={process.env.REACT_APP_IMG_URL + data.image + '.webp'} />
+                    <Card.Img class='scale' variant="top" src={process.env.REACT_APP_IMG_URL + data.image} />
                 )}
                 <Card.Body style={{height: 100, overflow: 'hidden', textAlign: 'center'}}>
                     <strong>{data.name}</strong>

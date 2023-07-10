@@ -46,11 +46,7 @@ const Product = () => {
                 <Row>
                     <Col lg={6}>
                         {product.image ? (
-                            <Image
-                                width={300}
-                                src={'/' + product.image}
-                                style={{marginTop: 50}}
-                            />
+                            <Image width={300} src={process.env.REACT_APP_IMG_URL + product.image} style={{marginTop: 50}} />
                         ) : (
                             <Image width={300} src="http://via.placeholder.com/300" />
                         )}
@@ -125,7 +121,7 @@ const Product = () => {
                             <div>
                                 <Card style={{width: 206, height: 250, objectFit: 'contain', cursor: 'pointer'}}>
                                     {product.image ? (
-                                        <Card.Img className='mt-1' style={{width: 200, height: 240, marginLeft: 3, objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + product.image + '.webp'} />
+                                        <Card.Img className='mt-1' style={{width: 200, height: 240, marginLeft: 3, objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + product.image} />
                                     ) : (
                                         <Card.Img variant="top" src={process.env.REACT_APP_IMG_URL + product.image + '.webp'} />
                                     )}

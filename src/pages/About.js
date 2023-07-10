@@ -1,5 +1,6 @@
 import { Card, Row } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
+import { Helmet } from "react-helmet"
 import ck from "../assets/marquee/ck.png";
 import ak from "../assets/marquee/ak.png";
 import swatch from "../assets/marquee/swatch.png";
@@ -15,6 +16,10 @@ import Marquee from 'react-fast-marquee';
 const About = () => {
     return (
         <Container>
+            <Helmet>
+                <title>О магазине - Aksessuary.KZ</title>
+                <meta name="description" content="Онлайн магазин часов"/>
+            </Helmet>
             <Card style={{padding: '2%'}}>
                 <h4 style={{textAlign: 'center'}}>Дорогие друзья!</h4>
                 <p> Интернет-магазин часов Aksessuary.KZ предлагает собственный товар, представленный 

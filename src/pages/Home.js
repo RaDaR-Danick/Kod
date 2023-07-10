@@ -7,10 +7,15 @@ import Knife from '../sections/knife.js';
 import About from '../sections/about.js'
 import Categories from '../components/Categories.js';
 import { Row } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     return (
         <Container>
+            <Helmet>
+                <title>Интернет магазин наручных часов в Алматы - Aksessuary.KZ</title>
+                <meta name="description" content="Онлайн магазин часов"/>
+            </Helmet>
             <Row>
                 <CarouselBox />
                 <ClockMan />

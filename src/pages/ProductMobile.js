@@ -39,11 +39,7 @@ const ProductMobile = () => {
                 <Row>
                     <Col lg={6}>
                         {product.image ? (
-                            <Image
-                                width={300}
-                                src={'/' + product.image}
-                                style={{marginTop: 50}}
-                            />
+                            <Image width={300} src={process.env.REACT_APP_IMG_URL + product.image} style={{marginTop: 50}} />
                         ) : (
                             <Image width={300} src="http://via.placeholder.com/300" />
                         )}
