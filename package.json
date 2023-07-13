@@ -24,6 +24,7 @@
     "react-slider": "^2.0.4",
     "react-uuid": "^1.0.2",
     "sass": "^1.63.3",
+    "serve": "^14.2.0",
     "styled-components": "^5.3.10",
     "swiper": "^9.3.2",
     "web-vitals": "^2.1.2"
