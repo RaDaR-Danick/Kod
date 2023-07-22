@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Container, Card, Form, Button } from 'react-bootstrap'
 import { signup } from '../http/userAPI.js'
 import { observer } from 'mobx-react-lite'
+import { Helmet } from 'react-helmet';
 
 const Signup = observer(() => {
     const { user } = useContext(AppContext)
@@ -28,6 +29,10 @@ const Signup = observer(() => {
 
     return (
         <Container className="d-flex justify-content-center">
+            <Helmet>
+                <title>Регистрация в интернет магазине наручных часов - Aksessuary.KZ</title>
+                <meta name="description" content="Онлайн магазин часов"/>
+            </Helmet>
             <Card style={{width: '50%'}} className="p-2 mt-5 bg-light">
                 <h3 className="m-auto">Регистрация</h3>
                 <Form className="d-flex flex-column" onSubmit={handleSubmit}>

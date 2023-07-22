@@ -9,6 +9,7 @@ import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar} from "swiper";
 import "swiper/css";
 import planet from "../assets/icon-planet.png";
 import box from "../assets/icon-box.png";
+import { Helmet } from 'react-helmet';
 
 const Product = () => {
     SwiperCore.use([Autoplay, Navigation, Pagination]);
@@ -42,6 +43,10 @@ const Product = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Каталог наручных швейцарские часы - Aksessuary.KZ</title>
+                <meta name="description" content="Онлайн магазин часов"/>
+            </Helmet>
             <Card className="mt-4" style={{padding: '2% 8%'}}>
                 <Row>
                     <Col lg={6}>

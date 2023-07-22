@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { AppContext } from '../components/AppContext.js'
 import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../http/userAPI.js'
+import { Helmet } from 'react-helmet';
 
 const User = () => {
     const { user } = useContext(AppContext)
@@ -16,6 +17,10 @@ const User = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Личный кабинет - Aksessuary.KZ</title>
+                <meta name="description" content="Онлайн магазин часов"/>
+            </Helmet>
             <h1>Личный кабинет</h1>
             <p>
                 Это личный кабинет постоянного покупателя магазина

@@ -5,6 +5,7 @@ import { userCreate, guestCreate } from '../http/orderAPI.js'
 import { fetchBasket } from '../http/basketAPI.js'
 import { check as checkAuth } from '../http/userAPI.js'
 import { Navigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet';
 
 const isValid = (input) => {
     let pattern
@@ -102,6 +103,10 @@ const Checkout = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Оформление заказа - Aksessuary.KZ</title>
+                <meta name="description" content="Онлайн магазин часов"/>
+            </Helmet>
             {basket.count === 0 && <Navigate to="/basket" replace={true} />}
             <h1 className="mb-4 mt-4">Оформление заказа</h1>
             <Form noValidate onSubmit={handleSubmit}>

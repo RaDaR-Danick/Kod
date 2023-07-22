@@ -3,6 +3,7 @@ import { fetchBrands, deleteBrand } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditBrand from '../components/EditBrand.js'
 import { Link } from 'react-router-dom'
+import { Helmet } from "react-helmet"
 
 const AdminBrands = () => {
     const [brands, setBrands] = useState(null)
@@ -50,6 +51,10 @@ const AdminBrands = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Добавить бренд - Aksessuary.KZ</title>
+                <meta name="description" content="Онлайн магазин часов"/>
+            </Helmet>
             <h1>Бренды</h1>
             <Button onClick={() => handleCreateClick()}>Создать бренд</Button>
             <EditBrand id={brandId} show={show} setShow={setShow} setChange={setChange} />

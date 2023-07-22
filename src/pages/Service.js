@@ -8,10 +8,15 @@ import sws4 from "../assets/sws/sws4.png";
 import sws5 from "../assets/sws/sws5.png";
 import sws6 from "../assets/sws/sws6.png";
 import swsmap from "../assets/sws-map.png";
+import { Helmet } from 'react-helmet';
 
 const Service = () => {
     return (
         <Container>
+            <Helmet>
+                <title>Сервис центр швейцарских наручных часов - Aksessuary.KZ</title>
+                <meta name="description" content="Онлайн магазин часов"/>
+            </Helmet>
             <a href='https://sws.kz/'><img src={ sws } alt="Авторизованный сервисный центр в Казахстане - SWService" style={{width: '100%'}} /></a>
             <Card className='mt-4'>
                 <h2 style={{textAlign: 'center'}}>Услуги</h2>

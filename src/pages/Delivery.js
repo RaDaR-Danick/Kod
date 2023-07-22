@@ -2,10 +2,15 @@ import { Card, Col, Row } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import delivery from "../assets/delivery.jpg";
 import deliverymap from "../assets/deliverymap.jpg";
+import { Helmet } from 'react-helmet';
 
 const Delivery = () => {
     return (
         <Container>
+            <Helmet>
+                <title>Доставка и оплата наручных часов - Aksessuary.KZ</title>
+                <meta name="description" content="Онлайн магазин часов"/>
+            </Helmet>
             <Card>
                 <div style={{padding: '2%', textAlign: 'center'}}>
                     <h2>Доставка</h2>
