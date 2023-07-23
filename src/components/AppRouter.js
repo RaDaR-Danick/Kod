@@ -30,6 +30,15 @@ import AdminStraps from '../pages/AdminStraps.js'
 import AdminPowers from '../pages/AdminPowers.js'
 import AdminWaters from '../pages/AdminWaters.js'
 import AdminProducts from '../pages/AdminProducts.js'
+import AK from '../pages/ak.js'
+import CK from '../pages/ck.js'
+import Orient from '../pages/orient.js'
+import Citizen from '../pages/citizen.js'
+import Swatch from '../pages/swatch.js'
+import Diesel from '../pages/diesel.js'
+import Parker from '../pages/parker.js'
+import Waterman from '../pages/waterman.js'
+import Victorinox from '../pages/victorinox.js'
 import { AppContext } from './AppContext.js'
 import { useContext } from 'react'
 import { observer } from 'mobx-react-lite'
@@ -48,6 +57,15 @@ const publicRoutes = [
     {path: '/delivery', Component: Delivery},
     {path: '/service', Component: Service},
     {path: '/contacts', Component: Contacts},
+    {path: '/anne_klein', Component: AK},
+    {path: '/calvin_klein', Component: CK},
+    {path: '/orient', Component: Orient},
+    {path: '/citizen', Component: Citizen},
+    {path: '/swatch', Component: Swatch},
+    {path: '/diesel', Component: Diesel},
+    {path: '/parker', Component: Parker},
+    {path: '/waterman', Component: Waterman},
+    {path: '/victorinox', Component: Victorinox},
     {path: '*', Component: NotFound},
 ]
 

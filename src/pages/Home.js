@@ -14,7 +14,10 @@ const Home = () => {
         <Container>
             <Helmet>
                 <title>Интернет магазин наручных часов в Алматы - Aksessuary.KZ</title>
-                <meta name="description" content="Онлайн магазин часов"/>
+                <meta name="description" content="Онлайн магазин наручных часов"/>
+                <meta name="keywords" content="магазин швейцарских часов, магазин наручных часов, купить швейцарские часы, купить наручные часы в Алматы, наручные часы в Алматы, 
+                    часы в Алматы, купить наручные часы, наручные часы, часы, купить Anne Klein в Алматы, купить Calvin Klein в Алматы, купить Orinet в Алматы, 
+                    купить Citizen в Алматы, купить Diesel в Алматы, купить Swatch в Алматы" />
             </Helmet>
             <Row>
                 <CarouselBox />

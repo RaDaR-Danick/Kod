@@ -44,8 +44,11 @@ const Product = () => {
     return (
         <Container>
             <Helmet>
-                <title>Каталог наручных швейцарские часы - Aksessuary.KZ</title>
-                <meta name="description" content="Онлайн магазин часов"/>
+                <title>Купить часы {product.name}</title>
+                <meta name="description" content="Онлайн магазин наручных часов"/>
+                <meta name="keywords" content="магазин швейцарских часов, магазин наручных часов, купить швейцарские часы, купить наручные часы в Алматы, наручные часы в Алматы, 
+                    часы в Алматы, купить наручные часы, наручные часы, часы, часы Anne Klein в Алматы, часы Calvin Klein в Алматы, часы Orinet в Алматы, 
+                    часы Citizen в Алматы, часы Diesel в Алматы, часы Swatch в Алматы" />
             </Helmet>
             <Card className="mt-4" style={{padding: '2% 8%'}}>
                 <Row>

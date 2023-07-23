@@ -23,18 +23,22 @@ const NavBar = observer(() => {
                 <Navbar bg="white" className='d-flex justify-content-center'>
                     <Nav className="ml-auto">
                         <NavLink to="/" className="link" style={{paddingRight: '80px', paddingTop: '10px', paddingBottom: '10px'}}>ГЛАВНАЯ</NavLink>
+                        <NavLink to="/shop" className="link" style={{paddingRight: '80px', paddingTop: '10px', paddingBottom: '10px'}}>КАТАЛОГ</NavLink>
                         <UIDropdown
-                            render={(toggleShow) => <UserCicle className='link' onClick={toggleShow} style={{paddingTop: '10px', paddingBottom: '10px'}}>КАТАЛОГ</UserCicle>}
+                            render={(toggleShow) => <UserCicle className='link' onClick={toggleShow} style={{paddingTop: '10px', paddingBottom: '10px'}}>БРЕНДЫ</UserCicle>}
                         >
                             {(toggleShow) => (
                                 <Card style={{marginTop: '14px', width: '160px'}}>
                                     <ListGroup style={{width:'130px', background: "white"}}>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=2" className="link" target='_parent'>ANNE KLEIN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=4" className="link" target='_parent'>CALVIN KLEIN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=3" className="link" target='_parent'>CITIZEN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=5" className="link" target='_parent'>DIESEL</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=9" className="link" target='_parent'>ORIENT</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/shop?brand=11" className="link" target='_parent'>SWATCH</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/anne_klein" className="link" target='_parent'>ANNE KLEIN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/calvin_klein" className="link" target='_parent'>CALVIN KLEIN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/citizen" className="link" target='_parent'>CITIZEN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/diesel" className="link" target='_parent'>DIESEL</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/orient" className="link" target='_parent'>ORIENT</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/swatch" className="link" target='_parent'>SWATCH</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/parker" className="link" target='_parent'>PARKER</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/waterman" className="link" target='_parent'>WATERMAN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/victorinox" className="link" target='_parent'>VICTORINOX</NavLink>
                                     </ListGroup>
                                 </Card>
                             )}
