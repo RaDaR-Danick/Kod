@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b183ef47.css",
-    "main.js": "/static/js/main.1345cb47.js",
+    "main.js": "/static/js/main.b384c525.js",
     "static/media/fon.png": "/static/media/fon.97670f1579221d203065.png",
     "static/media/waterman.jpg": "/static/media/waterman.78b9e8eb6347ced114fe.jpg",
     "static/media/sws-map.png": "/static/media/sws-map.840cc31d43d242a804c5.png",
@@ -50,10 +50,10 @@
     "static/media/go.png": "/static/media/go.de631f2e6f21a1b2ad49.png",
     "index.html": "/index.html",
     "main.b183ef47.css.map": "/static/css/main.b183ef47.css.map",
-    "main.1345cb47.js.map": "/static/js/main.1345cb47.js.map"
+    "main.b384c525.js.map": "/static/js/main.b384c525.js.map"
   },
   "entrypoints": [
     "static/css/main.b183ef47.css",
-    "static/js/main.1345cb47.js"
+    "static/js/main.b384c525.js"
   ]
 }
