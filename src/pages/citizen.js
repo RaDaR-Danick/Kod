@@ -35,7 +35,7 @@ const Citizen = () => {
                 <h4 style={{textAlign: 'center', color: 'red'}}>В случае возникновения вопросов или проблем с поиском нужной продукции свяжитесь с нами!</h4>
                 <Row style={{marginLeft: '10px', marginRight: '10px', marginBottom: '20px', marginTop: '10px'}}>
                     <Col md={8}>
-                        <img src={ citizenwatch } alt="Купить часы Citizen в Алматы" width='94%'/>
+                        <img src={ citizenwatch } alt="Купить часы Citizen в Алматы" width='100%' style={{marginBottom: 10}}/>
                     </Col>
                     <Col md={4}>
                         <img src={ citizenw } alt="Купить японские наручные часы Citizen в Алматы" width='100%'/>

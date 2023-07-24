@@ -2,8 +2,8 @@ import { Card, Col, Row } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
 import { Helmet } from 'react-helmet'
 import waterman from "../assets/waterman-logo.png"
-import watermanpen from "../assets/waterman1.webp"
-import watermanp from "../assets/waterman2.webp"
+import watermanpen from "../assets/waterman1.jpg"
+import watermanp from "../assets/waterman2.jpg"
 import go from "../assets/go.png";
 
 const Waterman = () => {
@@ -32,10 +32,10 @@ const Waterman = () => {
                 <h4 style={{textAlign: 'center', color: 'red'}}>В случае возникновения вопросов или проблем с поиском нужной продукции свяжитесь с нами!</h4>
                 <Row style={{marginLeft: '10px', marginRight: '10px', marginBottom: '20px', marginTop: '10px'}}>
                     <Col md={8}>
-                        <img src={ watermanpen } alt="Купить ручки Waterman в Алматы" width='100%'/>
+                        <img src={ watermanpen } alt="Купить ручки Waterman в Алматы" width='100%' style={{marginBottom: 10}}/>
                     </Col>
                     <Col md={4}>
-                        <img src={ watermanp } alt="Купить перьевые ручки Waterman в Алматы" width='90%'/>
+                        <img src={ watermanp } alt="Купить перьевые ручки Waterman в Алматы" width='100%'/>
                     </Col>
                 </Row>
                 <a href='/shop'><img class='scalecat' src={ go } alt="Купить перьевые ручки Waterman в Алматы" style={{width: '20%', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '20px' }} /></a>

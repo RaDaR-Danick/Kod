@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b183ef47.css",
-    "main.js": "/static/js/main.29e1f682.js",
+    "main.js": "/static/js/main.cbf62e84.js",
     "static/media/fon.png": "/static/media/fon.97670f1579221d203065.png",
     "static/media/parker2.jpg": "/static/media/parker2.97f2b0df1dd9e6fc9551.jpg",
     "static/media/waterman.jpg": "/static/media/waterman.78b9e8eb6347ced114fe.jpg",
@@ -33,6 +33,7 @@
     "static/media/sws5.png": "/static/media/sws5.c787ec4200ced5d106f3.png",
     "static/media/diesel1.jpg": "/static/media/diesel1.147d8d254732d18677a2.jpg",
     "static/media/orient1.jpg": "/static/media/orient1.365c78395449fa394537.jpg",
+    "static/media/waterman1.jpg": "/static/media/waterman1.b5f20def11a9526caa69.jpg",
     "static/media/sws2.png": "/static/media/sws2.34bc5a7e96395fcb97da.png",
     "static/media/orient2.jpg": "/static/media/orient2.17aeae9a27153f0ca671.jpg",
     "static/media/citizen1.jpg": "/static/media/citizen1.78782aa55ece944fee5a.jpg",
@@ -52,7 +53,6 @@
     "static/media/parker.png": "/static/media/parker.eadb465c5570cb56c2bd.png",
     "static/media/clockman.jpg": "/static/media/clockman.3b33272590c652b70569.jpg",
     "static/media/K2U296L6.webp": "/static/media/K2U296L6.78dcc84db09eea70bfe0.webp",
-    "static/media/waterman1.webp": "/static/media/waterman1.ed6fb9b17958ed3ebc90.webp",
     "static/media/anneklein2.jpg": "/static/media/anneklein2.1c987d70c574cd35be14.jpg",
     "static/media/pen.jpg": "/static/media/pen.620a88df1ff543e40777.jpg",
     "static/media/orient-logo.png": "/static/media/orient-logo.f0184ed18459611f8fa9.png",
@@ -72,10 +72,10 @@
     "static/media/victorinox-kitchen.webp": "/static/media/victorinox-kitchen.1eb4ce89325843ce2d85.webp",
     "index.html": "/index.html",
     "main.b183ef47.css.map": "/static/css/main.b183ef47.css.map",
-    "main.29e1f682.js.map": "/static/js/main.29e1f682.js.map"
+    "main.cbf62e84.js.map": "/static/js/main.cbf62e84.js.map"
   },
   "entrypoints": [
     "static/css/main.b183ef47.css",
-    "static/js/main.29e1f682.js"
+    "static/js/main.cbf62e84.js"
   ]
 }

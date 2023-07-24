@@ -43,7 +43,7 @@ const Diesel = () => {
                 <h4 style={{textAlign: 'center', color: 'red'}}>В случае возникновения вопросов или проблем с поиском нужной продукции свяжитесь с нами!</h4>
                 <Row style={{marginLeft: '10px', marginRight: '10px', marginBottom: '20px', marginTop: '10px'}}>
                     <Col md={8}>
-                        <img src={ dieselnwatch } alt="Купить часы Diesel в Алматы" width='92%'/>
+                        <img src={ dieselnwatch } alt="Купить часы Diesel в Алматы" width='100%' style={{marginBottom: 10}}/>
                     </Col>
                     <Col md={4}>
                         <img src={ dieselw } alt="Купить наручные часы Diesel в Алматы" width='100%'/>

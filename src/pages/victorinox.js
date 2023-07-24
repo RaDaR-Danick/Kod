@@ -27,7 +27,7 @@ const Victorinox = () => {
                 <h4 style={{textAlign: 'center'}}>В случае возникновения вопросов или проблем с поиском нужной продукции свяжитесь с нами!</h4>
                 <Row style={{marginLeft: '10px', marginRight: '10px', marginBottom: '20px', marginTop: '10px'}}>
                     <Col md={8}>
-                        <img src={ army } alt="Купить швейцарские армейские ножи Victorinox в Алматы" width='100%'/>
+                        <img src={ army } alt="Купить швейцарские армейские ножи Victorinox в Алматы" width='100%' style={{marginBottom: 10}}/>
                     </Col>
                     <Col md={4}>
                         <img src={ kitchen } alt="Купить швейцарские кухоные ножи Victorinox в Алматы" width='100%'/>

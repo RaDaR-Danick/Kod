@@ -36,10 +36,10 @@ const CK = () => {
                 <h4 style={{textAlign: 'center', color: 'red'}}>В случае возникновения вопросов или проблем с поиском нужной продукции свяжитесь с нами!</h4>
                 <Row style={{marginLeft: '10px', marginRight: '10px', marginBottom: '20px', marginTop: '10px'}}>
                     <Col md={8}>
-                        <img src={ calvink } alt="Купить часы Anne Klein в Алматы" width='100%'/>
+                        <img src={ calvink } alt="Купить часы Anne Klein в Алматы" width='100%' style={{marginBottom: 10}}/>
                     </Col>
                     <Col md={4}>
-                        <img src={ calvinklein } alt="Купить швейцарские часы Calvin Klein в Алматы" width='90%'/>
+                        <img src={ calvinklein } alt="Купить швейцарские часы Calvin Klein в Алматы" width='100%'/>
                     </Col>
                 </Row>
                 <a href='/shop?brand=4'><img class='scalecat' src={ go } alt="Купить наручные швейцарские часы Calvin Klein в Алматы" style={{width: '20%', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '20px' }} /></a>
