@@ -36,8 +36,8 @@ const Footer = () => {
                         <a href='href="tel:+77003069000"' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Телефон: +77003069000</a><br />
                         <a href="mailto:radar-daniyar@mail.ru" style={{textDecoration: "none", fontSize: 14, color: "black"}}>E-mail: radar-daniyar@mail.ru</a><br />
                         <div className='mt-3'>
-                            <a href='/'><img  src = { instagram } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
-                            <a href='/'><img  src = { facebook } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
+                            <a href='https://www.instagram.com/radar.daniyar/'><img  src = { instagram } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
+                            <a href='https://www.facebook.com/profile.php?id=100093576204176'><img  src = { facebook } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
                             <a href='//wa.me/77003069000' rel="noopener"><img  src = { whatsapp } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
                             <a href='//t.me/RaDaR1204' rel="noopener"><img  src = { telegram } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
                         </div>
