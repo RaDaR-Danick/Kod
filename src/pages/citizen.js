@@ -13,7 +13,7 @@ const Citizen = () => {
                 <title>Купить часы Citizen в Алматы - Aksessuary.KZ</title>
                 <meta name="description" content="Онлайн магазин наручных часов Citizen в Алматы"/>
                 <meta name="keywords" content="купить часы Citizen в Алматы, купить наручные часы Citizen в Алматы, купить часы Citizen в Казахстане, 
-                    наручные часы Citizen, Citizen, часы Citizen в Алматы" />
+                    наручные часы Citizen, Citizen, часы Citizen в Алматы, часы Citizen, часы, наручные часы, женские часы, мужские часы, японские часы" />
             </Helmet>
             <Card>
                 <img src={ citizen } alt="Купить наручные часы Citizen в Алматы"  width='30%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>

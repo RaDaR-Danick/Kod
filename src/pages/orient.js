@@ -13,7 +13,7 @@ const Orient = () => {
                 <title>Купить часы Orient в Алматы - Aksessuary.KZ</title>
                 <meta name="description" content="Онлайн магазин наручных часов Orient в Алматы"/>
                 <meta name="keywords" content="купить часы Orient в Алматы, купить наручные часы Orient в Алматы, купить часы Orient в Казахстане, 
-                    наручные часы Orient, Orient, часы Orient в Алматы" />
+                    наручные часы Orient, Orient, часы Orient в Алматы, часы Orient, Orient, часы, наручные часы, женские часы, мужские часы, японские часы" />
             </Helmet>
             <Card>
                 <img src={ orient } alt="Купить наручные часы Orient в Алматы"  width='30%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>

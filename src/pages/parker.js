@@ -13,7 +13,7 @@ const Parker = () => {
                 <title>Купить перьевые ручки Parker в Алматы - Aksessuary.KZ</title>
                 <meta name="description" content="Онлайн магазин перьевых ручек Parker в Алматы"/>
                 <meta name="keywords" content="купить ручки Parker в Алматы, купить перьевые ручки Parker в Алматы, купить перьевые ручки Parker в Казахстане, 
-                    перьевые ручки Parker, Parker, ручки Parker в Алматы" />
+                    перьевые ручки Parker, Parker, ручки Parker в Алматы, ручка Parker, ручки, перьевые ручки, Parker" />
             </Helmet>
             <Card>
                 <img src={ parker } alt="Купить перьевые ручки Parker в Алматы"  width='40%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>

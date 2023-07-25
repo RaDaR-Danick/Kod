@@ -14,7 +14,8 @@ const Victorinox = () => {
                 <title>Купить швейцарские ножи Victorinox в Алматы - Aksessuary.KZ</title>
                 <meta name="description" content="Онлайн магазин перьевых ручек Victorinox в Алматы"/>
                 <meta name="keywords" content="купить швейцарские армейские ножи Victorinox в Алматы, купить армейские ножи Victorinox в Алматы, купить кухонные ножи Victorinox в Алматы, 
-                купить армейские ножи Victorinox в Казахстане, купить кухонные ножи Victorinox в Казахстане, швейцарские ножи Victorinox, Victorinox, ножи Victorinox в Алматы" />
+                купить армейские ножи Victorinox в Казахстане, купить кухонные ножи Victorinox в Казахстане, швейцарские ножи Victorinox, Victorinox, ножи Victorinox в Алматы, ножи Victorinox, Victorinox, 
+                армейские ножи, кухоные ножи, ножи" />
             </Helmet>
             <Card>
                 <img src={ victorinox } alt="Купить швейцарские ножи Victorinox в Алматы"  width='30%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>

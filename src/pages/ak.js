@@ -13,7 +13,7 @@ const AK = () => {
                 <title>Купить часы Anne Klein в Алматы - Aksessuary.KZ</title>
                 <meta name="description" content="Онлайн магазин наручных часов Anne Klein в Алматы"/>
                 <meta name="keywords" content="купить часы Anne Klein в Алматы, купить наручные часы Anne Klein в Алматы, купить часы Anne Klein в Казахстане, 
-                    наручные часы Anne Klein, Anne Klein, часы Anne Klein в Алматы" />
+                    наручные часы Anne Klein, Anne Klein, часы Anne Klein в Алматы, часы Anne Klein, Anne Klein, женские часы, часы" />
             </Helmet>
             <Card>
                 <img src={ ak } alt="Купить часы Anne Klein в Алматы"  width='35%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', marginTop: 15}}/>

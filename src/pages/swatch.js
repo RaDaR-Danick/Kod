@@ -13,7 +13,7 @@ const Swatch = () => {
                 <title>Купить часы Swatch в Алматы - Aksessuary.KZ</title>
                 <meta name="description" content="Онлайн магазин наручных часов Swatch в Алматы"/>
                 <meta name="keywords" content="купить часы Swatch в Алматы, купить наручные часы Swatch в Алматы, купить часы Swatch в Казахстане, 
-                    наручные часы Swatch, Swatch, часы Swatch в Алматы" />
+                    наручные часы Swatch, Swatch, часы Swatch в Алматы, часы Swatch, Swatch, часы, наручные часы, женские часы, мужские часы, швейчарские часы" />
             </Helmet>
             <Card>
                 <img src={ swatch } alt="Купить наручные часы Swatch в Алматы"  width='40%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>

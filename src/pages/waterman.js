@@ -13,7 +13,7 @@ const Waterman = () => {
                 <title>Купить перьевые ручки Waterman в Алматы - Aksessuary.KZ</title>
                 <meta name="description" content="Онлайн магазин перьевых ручек Waterman в Алматы"/>
                 <meta name="keywords" content="купить ручки Waterman в Алматы, купить перьевые ручки Waterman в Алматы, купить перьевые ручки Waterman в Казахстане, 
-                    перьевые ручки Waterman, Waterman, ручки Waterman в Алматы" />
+                    перьевые ручки Waterman, Waterman, ручки Waterman в Алматы, ручки Waterman, Waterman, ручки, перьевые ручки" />
             </Helmet>
             <Card>
                 <img src={ waterman } alt="Купить перьевые ручки Waterman в Алматы"  width='35%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', marginTop: 15}}/>
