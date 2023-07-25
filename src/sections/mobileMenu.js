@@ -3,7 +3,7 @@ import Menu from "./Menu";
 
 const MobileMenu = () => {
     const [menuActive, setMenuActive] = useState(false)
-    const items = [{value:'Главная', href:'/'}, {value:'Мужские часы', href:'/shop/?gender=3'}, {value:'Женские часы', href:'/shop/?gender=2'}, {value:'Перьевые ручки', href:'/shop/?gender=2'}, {value:' Victorinox', href:'/shop/?gender=2'}, {value:'О магазине', href:'/about'}, {value:'Доставка и оплата', href:'/delivery'}, {value:'Сервис центр', href:'/service'}]
+    const items = [{value:'Главная', href:'/'}, {value:'Каталог', href:'/shop'}, {value:'Женские часы', href:'/shop/?gender=2'}, {value:'Перьевые ручки', href:'/shop/?gender=2'}, {value:' Victorinox', href:'/shop/?gender=2'}, {value:'О магазине', href:'/about'}, {value:'Доставка и оплата', href:'/delivery'}, {value:'Сервис центр', href:'/service'}]
 
     return (
         <div className="show-on-mobile">
