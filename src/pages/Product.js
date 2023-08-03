@@ -10,6 +10,7 @@ import "swiper/css";
 import planet from "../assets/icon-planet.png";
 import box from "../assets/icon-box.png";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
   
 const Product = () => {
     SwiperCore.use([Autoplay, Navigation, Pagination]);
@@ -42,6 +43,9 @@ const Product = () => {
   
     return (
       <Container>
+        <Helmet>
+          <title>Купить наручные часы {product.name}</title>
+        </Helmet>
         <Card className="mt-4" style={{ padding: "2% 8%" }}>
           <Row>
             <Col lg={6}>
