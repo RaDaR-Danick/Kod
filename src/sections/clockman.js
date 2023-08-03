@@ -20,7 +20,7 @@ const ClockMan = () => {
                         <div>
                             <p style={{paddingBottom: 10, paddingTop: 10, textAlign: 'center', fontSize: 17}}>Большой выбор ассортимент моделей мужских часов от традиционных классических до инновационных спортивных.</p>
                             <img class='scale' src={ AN360059L} alt="Купить Citizen FET0P004W0 в Алматы" width='34%' style={{marginRight: '3%' }}/>
-                            <img class='scale' src={ KAM27146 } alt="Купить Calvin Klein KAM27146 в Алматы" width='27%' style={{marginRight: '3%'}}/>
+                            <a href='/product/186'><img class='scale' src={ KAM27146 } alt="Купить Calvin Klein KAM27146 в Алматы" width='27%' style={{marginRight: '3%'}}/></a>
                             <img class='scale' src={ RAAK0403N10B } alt="Купить Orient FET0P004W0 в Алматы" width='30%'/>
                         </div>
                     </Col>
