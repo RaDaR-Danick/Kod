@@ -11,7 +11,7 @@ const Waterman = () => {
         <Container>
             <Helmet>
                 <title>Купить перьевые ручки Waterman в Алматы - Aksessuary.KZ</title>
-                <meta name="description" content="Онлайн магазин перьевых ручек Waterman в Алматы"/>
+                <meta name="description" content="ручки Waterman"/>
                 <meta name="keywords" content="купить ручки Waterman в Алматы, купить перьевые ручки Waterman в Алматы, купить перьевые ручки Waterman в Казахстане, 
                     перьевые ручки Waterman, Waterman, ручки Waterman в Алматы, ручки Waterman, Waterman, ручки, перьевые ручки" />
             </Helmet>

@@ -234,8 +234,8 @@ const Shop = observer(() => {
     return (
         <Container>
             <Helmet>
-                <title>Купить швейцарские наручные часы в Алматы - Aksessuary.KZ</title>
-                <meta name="description" content="Онлайн магазин швейцарских часов"/>
+                <title>Купить наручные часы в Алматы</title>
+                <meta name="description" content="Купить наручные часы в Алматы - Aksessuary.KZ"/>
                 <meta name="keywords" content="магазин швейцарских часов, магазин наручных часов, купить швейцарские часы, купить наручные часы в Алматы, наручные часы в Алматы, 
                     часы в Алматы, купить наручные часы, наручные часы, часы, купить часы Anne Klein в Алматы, купить часы Calvin Klein в Алматы, купить часы Orinet в Алматы, 
                     купить часы Citizen в Алматы, купить часы Diesel в Алматы, купить часы Swatch в Алматы" />

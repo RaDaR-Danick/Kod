@@ -11,7 +11,7 @@ const Orient = () => {
         <Container>
             <Helmet>
                 <title>Купить часы Orient в Алматы - Aksessuary.KZ</title>
-                <meta name="description" content="Онлайн магазин наручных часов Orient в Алматы"/>
+                <meta name="description" content="часы Orient"/>
                 <meta name="keywords" content="купить часы Orient в Алматы, купить наручные часы Orient в Алматы, купить часы Orient в Казахстане, 
                     наручные часы Orient, Orient, часы Orient в Алматы, часы Orient, Orient, часы, наручные часы, женские часы, мужские часы, японские часы" />
             </Helmet>

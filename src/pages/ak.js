@@ -11,7 +11,7 @@ const AK = () => {
         <Container>
             <Helmet>
                 <title>Купить часы Anne Klein в Алматы - Aksessuary.KZ</title>
-                <meta name="description" content="Онлайн магазин наручных часов Anne Klein в Алматы"/>
+                <meta name="description" content="часы Anne Klein"/>
                 <meta name="keywords" content="купить часы Anne Klein в Алматы, купить наручные часы Anne Klein в Алматы, купить часы Anne Klein в Казахстане, 
                     наручные часы Anne Klein, Anne Klein, часы Anne Klein в Алматы, часы Anne Klein, Anne Klein, женские часы, часы" />
             </Helmet>

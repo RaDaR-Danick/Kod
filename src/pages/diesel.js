@@ -11,7 +11,7 @@ const Diesel = () => {
         <Container>
             <Helmet>
                 <title>Купить часы Diesel в Алматы - Aksessuary.KZ</title>
-                <meta name="description" content="Онлайн магазин наручных часов Diesel в Алматы"/>
+                <meta name="description" content="часы Diesel"/>
                 <meta name="keywords" content="купить часы Diesel в Алматы, купить наручные часы Diesel в Алматы, купить часы Diesel в Казахстане, 
                     наручные часы Diesel, Diesel, часы Diesel в Алматы, часы Diesel, Diesel, часы, наручные часы, женские часы, мужские часы, брендовые часы" />
             </Helmet>

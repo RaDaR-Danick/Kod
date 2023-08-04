@@ -11,7 +11,7 @@ const Citizen = () => {
         <Container>
             <Helmet>
                 <title>Купить часы Citizen в Алматы - Aksessuary.KZ</title>
-                <meta name="description" content="Онлайн магазин наручных часов Citizen в Алматы"/>
+                <meta name="description" content="часы Citizen"/>
                 <meta name="keywords" content="купить часы Citizen в Алматы, купить наручные часы Citizen в Алматы, купить часы Citizen в Казахстане, 
                     наручные часы Citizen, Citizen, часы Citizen в Алматы, часы Citizen, часы, наручные часы, женские часы, мужские часы, японские часы" />
             </Helmet>

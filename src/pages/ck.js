@@ -11,7 +11,7 @@ const CK = () => {
         <Container>
             <Helmet>
                 <title>Купить часы Calvin Klein в Алматы - Aksessuary.KZ</title>
-                <meta name="description" content="Онлайн магазин наручных часов Calvin Klein в Алматы"/>
+                <meta name="description" content="часы Calvin Klein"/>
                 <meta name="keywords" content="купить часы Calvin Klein в Алматы, купить наручные часы Calvin Klein в Алматы, купить часы Calvin Klein в Казахстане, 
                     наручные часы Calvin Klein, Calvin Klein, часы Calvin Klein в Алматы, часы ck, часы Calvin Klein, ck, Calvin Klein, часы, наручные часы, женские часы, мужские часы, 
                     швейчарские часы" />

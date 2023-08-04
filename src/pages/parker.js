@@ -11,7 +11,7 @@ const Parker = () => {
         <Container>
             <Helmet>
                 <title>Купить перьевые ручки Parker в Алматы - Aksessuary.KZ</title>
-                <meta name="description" content="Онлайн магазин перьевых ручек Parker в Алматы"/>
+                <meta name="description" content="перьевые ручки Parker"/>
                 <meta name="keywords" content="купить ручки Parker в Алматы, купить перьевые ручки Parker в Алматы, купить перьевые ручки Parker в Казахстане, 
                     перьевые ручки Parker, Parker, ручки Parker в Алматы, ручка Parker, ручки, перьевые ручки, Parker" />
             </Helmet>
