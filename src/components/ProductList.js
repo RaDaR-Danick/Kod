@@ -104,15 +104,17 @@ const ProductList = observer(() => {
                     <p className="m-3">По вашему запросу ничего не найдено</p>
                 )}
             </Row>
-            {catalog.pages > 1 && (
-                <Pagination>
-                    <Pagination.First onClick={handleFirstPage} />
-                    <Pagination.Prev onClick={handlePrevPage} />
-                    {renderPageNumbers()}
-                    <Pagination.Next onClick={handleNextPage} />
-                    <Pagination.Last onClick={handleLastPage} />
-                </Pagination>
-            )}
+            <div style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>
+                {catalog.pages > 1 && (
+                    <Pagination>
+                        <Pagination.First onClick={handleFirstPage} />
+                        <Pagination.Prev onClick={handlePrevPage} />
+                        {renderPageNumbers()}
+                        <Pagination.Next onClick={handleNextPage} />
+                        <Pagination.Last onClick={handleLastPage} />
+                    </Pagination>
+                )}
+            </div>
         </>
     );
 });

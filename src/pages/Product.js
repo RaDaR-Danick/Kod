@@ -126,21 +126,21 @@ const Product = () => {
             >
               {sameCollectionProducts?.map((product) => {
                 return (
-                  <SwiperSlide key={product.id}>
-                    <div>
-                      <Card style={{width: 206, height: 250, objectFit: "contain", cursor: "pointer"}}>
-                        <Link to={`/product/${product.id}`}>
-                          {product.image ? (
-                            <Card.Img className="mt-1" style={{ width: 200, height: 240, marginLeft: 3,  objectFit: "contain"}}variant="top" src={process.env.REACT_APP_IMG_URL + product.image}/>
-                          ) : (
-                            <Card.Img variant="top" src={process.env.REACT_APP_IMG_URL + product.image + ".webp" }/>)}
-                          <Card.Body>
-                            <Card.Title>{product.name}</Card.Title>
-                          </Card.Body>
-                        </Link>
-                      </Card>
-                    </div>
-                  </SwiperSlide>
+                  <div style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>
+                    <SwiperSlide key={product.id}>
+                        <Card style={{width: 204, height: 250, objectFit: "contain", cursor: "pointer"}}>
+                          <Link to={`/product/${product.id}`}>
+                            {product.image ? (
+                              <Card.Img className="mt-1" style={{ width: 198, height: 240, marginLeft: 3,  objectFit: "contain"}}variant="top" src={process.env.REACT_APP_IMG_URL + product.image}/>
+                            ) : (
+                              <Card.Img variant="top" src={process.env.REACT_APP_IMG_URL + product.image + ".webp" }/>)}
+                            <Card.Body>
+                              <Card.Title>{product.name}</Card.Title>
+                            </Card.Body>
+                          </Link>
+                        </Card>
+                    </SwiperSlide>
+                  </div>
                 );
               })}
             </Swiper>
@@ -151,4 +151,3 @@ const Product = () => {
   };
   
   export default Product;
-  
