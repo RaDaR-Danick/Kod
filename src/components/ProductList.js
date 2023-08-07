@@ -1,3 +1,4 @@
+import React from "react";
 import { Row, Pagination } from "react-bootstrap";
 import ProductItem from "./ProductItem.js";
 import { useContext } from "react";
@@ -9,10 +10,30 @@ import { Helmet } from "react-helmet";
 const ProductList = observer(() => {
     const { catalog } = useContext(AppContext);
     const navigate = useNavigate();
+
+    const handleFirstPage = () => {
+        handleClick(1);
+    };
+
+    const handleLastPage = () => {
+        handleClick(catalog.pages);
+    };
+
+    const handleNextPage = () => {
+        if (catalog.page < catalog.pages) {
+            handleClick(catalog.page + 1);
+        }
+    };
+
+    const handlePrevPage = () => {
+        if (catalog.page > 1) {
+            handleClick(catalog.page - 1);
+        }
+    };
+
     const handleClick = (page) => {
         catalog.page = page;
         const params = {};
-        if (catalog.category) params.category = catalog.category;
         if (catalog.brand) params.brand = catalog.brand;
         if (catalog.mehanizm) params.mehanizm = catalog.mehanizm;
         if (catalog.gender) params.gender = catalog.gender;
@@ -29,20 +50,42 @@ const ProductList = observer(() => {
         });
     };
 
-    const pages = [];
-    for (let page = 1; page <= catalog.pages; page++) {
-        pages.push(
-        <Pagination.Item
-            key={page}
-            active={page === catalog.page}
-            activeLabel=""
-            onClick={() => handleClick(page)}
-        >
-            {page}
-        </Pagination.Item>
-        );
-    }
-    
+    const renderPageNumbers = () => {
+        const pageNumbers = [];
+        const maxPageButtons = 4;
+        const halfMaxButtons = Math.floor(maxPageButtons / 2);
+        const totalPages = catalog.pages;
+
+        let startPage = Math.max(1, catalog.page - halfMaxButtons);
+        let endPage = Math.min(totalPages, startPage + maxPageButtons - 1);
+
+        if (startPage > 1) {
+            pageNumbers.push(
+                <Pagination.Ellipsis key="ellipsis-start" onClick={() => handleClick(startPage - 1)} />
+            );
+        }
+
+        for (let page = startPage; page <= endPage; page++) {
+            pageNumbers.push(
+                <Pagination.Item
+                    key={page}
+                    active={page === catalog.page}
+                    onClick={() => handleClick(page)}
+                >
+                    {page}
+                </Pagination.Item>
+            );
+        }
+
+        if (endPage < totalPages) {
+            pageNumbers.push(
+                <Pagination.Ellipsis key="ellipsis-end" onClick={() => handleClick(endPage + 1)} />
+            );
+        }
+
+        return pageNumbers;
+    };
+
     return (
         <>
             <Helmet>
@@ -54,18 +97,22 @@ const ProductList = observer(() => {
             </Helmet>
             <Row className="mb-3">
                 {catalog.products.length ? (
-                catalog.products.map((item) => (
-                    <ProductItem key={item.id} data={item} />
-                ))
+                    catalog.products.map((item) => (
+                        <ProductItem key={`${item.id}_${catalog.page}`} data={item} />
+                    ))
                 ) : (
                     <p className="m-3">По вашему запросу ничего не найдено</p>
                 )}
             </Row>
-            {catalog.pages > 1 && 
+            {catalog.pages > 1 && (
                 <Pagination>
-                    {pages}
+                    <Pagination.First onClick={handleFirstPage} />
+                    <Pagination.Prev onClick={handlePrevPage} />
+                    {renderPageNumbers()}
+                    <Pagination.Next onClick={handleNextPage} />
+                    <Pagination.Last onClick={handleLastPage} />
                 </Pagination>
-            }
+            )}
         </>
     );
 });
