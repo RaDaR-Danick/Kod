@@ -1,12 +1,12 @@
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap'
-import { fetchOneProduct, updateProduct, fetchCategories, fetchBrands } from '../http/catalogAPI.js'
+import { fetchOneProduct, updateProduct, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, fetchWaters } from '../http/catalogAPI.js'
 import { useState, useEffect } from 'react'
 import uuid from 'react-uuid'
 import UpdateProperties from './UpdateProperties.js'
 import { createProperty, updateProperty, deleteProperty } from '../http/catalogAPI.js'
 
-const defaultValue = {name: '', price: '', category: '', brand: ''}
-const defaultValid = {name: null, price: null, category: null, brand: null}
+const defaultValue = {name: '', price: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: ''}
+const defaultValid = {name: null, price: null, brand: null, mehanizm: null, gender: null, shape: null, material: null, glass: null, strap: null, power: null, water: null}
 
 const isValid = (value) => {
     const result = {}
@@ -14,8 +14,15 @@ const isValid = (value) => {
     for (let key in value) {
         if (key === 'name') result.name = value.name.trim() !== ''
         if (key === 'price') result.price = pattern.test(value.price.trim())
-        if (key === 'category') result.category = pattern.test(value.category)
         if (key === 'brand') result.brand = pattern.test(value.brand)
+        if (key === 'mehanizm') result.mehanizm = pattern.test(value.mehanizm)
+        if (key === 'gender') result.gender = pattern.test(value.gender)
+        if (key === 'shape') result.shape = pattern.test(value.shape)
+        if (key === 'material') result.material = pattern.test(value.material)
+        if (key === 'glass') result.glass = pattern.test(value.glass)
+        if (key === 'strap') result.strap = pattern.test(value.strap)
+        if (key === 'power') result.power = pattern.test(value.power)
+        if (key === 'water') result.water = pattern.test(value.water)
     }
     return result
 }
@@ -23,7 +30,6 @@ const isValid = (value) => {
 const updateProperties = async (properties, productId) => {
     for (const prop of properties) {
         const empty = prop.name.trim() === '' || prop.value.trim() === ''
-        // если вдруг старая хар-ка оказалась пустая — удалим ее на сервере
         if (empty && prop.id) {
             try {
                 await deleteProperty(productId, prop)
@@ -32,11 +38,6 @@ const updateProperties = async (properties, productId) => {
             }
             continue
         }
-        /*
-         * Если у объекта prop свойство append равно true — это новая хар-ка, ее надо создать.
-         * Если у объекта prop свойство change равно true — хар-ка изменилась, ее надо обновить.
-         * Если у объекта prop свойство remove равно true — хар-ку удалили, ее надо удалить.
-         */
         if (prop.append && !empty) {
             try {
                 await createProperty(productId, prop)
@@ -69,20 +70,20 @@ const UpdateProduct = (props) => {
 
     const [value, setValue] = useState(defaultValue)
     const [valid, setValid] = useState(defaultValid)
-
-    // список категорий и список брендов для возможности выбора
-    const [categories, setCategories] = useState(null)
     const [brands, setBrands] = useState(null)
-
-    // выбранное для загрузки изображение товара
+    const [mehanizms, setMehanizms] = useState(null)
+    const [genders, setGenders] = useState(null)
+    const [shapes, setShapes] = useState(null)
+    const [materials, setMaterials] = useState(null)
+    const [glasses, setGlasses] = useState(null)
+    const [straps, setStraps] = useState(null)
+    const [powers, setPowers] = useState(null)
+    const [waters, setWaters] = useState(null)
     const [image, setImage] = useState(null)
-
-    // список характеристик товара
     const [properties, setProperties] = useState([])
 
     useEffect(() => {
         if(id) {
-            // нужно получить с сервера данные товара для редактирования
             fetchOneProduct(id)
                 .then(
                     data => {
@@ -90,17 +91,19 @@ const UpdateProduct = (props) => {
                             name: data.name,
                             price: data.price.toString(),
                             category: data.categoryId.toString(),
-                            brand: data.brandId.toString()
+                            brand: data.brandId.toString(),
+                            mehanizm: data.mehanizmId.toString(),
+                            gender: data.genderId.toString(),
+                            shape: data.shapeId.toString(),
+                            material: data.materialId.toString(),
+                            glass: data.glassId.toString(),
+                            strap: data.strapId.toString(),
+                            power: data.powerId.toString(),
+                            water: data.waterId.toString()
                         }
                         setValue(prod)
                         setValid(isValid(prod))
-                        // для удобства работы с хар-ми зададим для каждой уникальный идентификатор
-                        // и доп.свойства, которые подскажут нам, какой http-запрос на сервер нужно
-                        // выполнить — добавления, обновления или удаления характеристики
                         setProperties(data.props.map(item => {
-                            // при добавлении новой хар-ки свойство append принимает значение true
-                            // при изменении старой хар-ки свойство change принимает значение true
-                            // при удалении старой хар-ки свойство remove принимает значение true
                             return {...item, unique: uuid(), append: false, remove: false, change: false}
                         }))
                     }
@@ -108,14 +111,41 @@ const UpdateProduct = (props) => {
                 .catch(
                     error => alert(error.response.data.message)
                 )
-            // нужно получить с сервера список категорий и список брендов
-            fetchCategories()
-                .then(
-                    data => setCategories(data)
-                )
             fetchBrands()
                 .then(
                     data => setBrands(data)
+                )
+            fetchMehanizms()
+                .then(
+                    data => setMehanizms(data)
+                )
+            fetchGenders()
+                .then(
+                    data => setGenders(data)
+                )
+            fetchShapes()
+                .then(
+                    data => setShapes(data)
+                )
+            fetchMaterials()
+                .then(
+                    data => setMaterials(data)
+                )
+            fetchGlasses()
+                .then(
+                    data => setGlasses(data)
+                )
+            fetchStraps()
+                .then(
+                    data => setStraps(data)
+                )
+            fetchPowers()
+                .then(
+                    data => setPowers(data)
+                )
+            fetchWaters()
+                .then(
+                    data => setWaters(data)
                 )
         }
     }, [id])
@@ -132,28 +162,22 @@ const UpdateProduct = (props) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-
-        /*
-         * На первый взгляд кажется, что переменная correct не нужна, можно обойтись valid, но это
-         * не так. Нельзя использовать значение valid сразу после изменения этого значения — ф-ция
-         * setValid не изменяет значение состояния мгновенно. Вызов функции лишь означает — React
-         * «принял к сведению» наше сообщение, что состояние нужно изменить.
-         */
         const correct = isValid(value)
         setValid(correct)
-
-        // если введенные данные прошли проверку — можно отправлять их на сервер
-        if (correct.name && correct.price && correct.category && correct.brand) {
+        if (correct.name && correct.price && correct.brand && correct.mehanizm && correct.gender && correct.shape && correct.material && correct.glass && correct.strap && correct.power && correct.water) {
             const data = new FormData()
             data.append('name', value.name.trim())
             data.append('price', value.price.trim())
-            data.append('categoryId', value.category)
             data.append('brandId', value.brand)
+            data.append('mehanizmId', value.mehanizm)
+            data.append('genderId', value.gender)
+            data.append('shapeId', value.shape)
+            data.append('materialId', value.material)
+            data.append('glassId', value.glass)
+            data.append('strapId', value.strap)
+            data.append('powerId', value.power)
+            data.append('waterId', value.water)
             if (image) data.append('image', image, image.name)
-
-            // нужно обновить, добавить или удалить характеристики и обязательно дождаться
-            // ответа сервера — поэтому функция updateProperties() объявлена как async, а
-            // в теле функции для выполнения действия с каждой хар-кой используется await
             if (properties.length) {
                 await updateProperties(properties, id)
             }
@@ -161,29 +185,26 @@ const UpdateProduct = (props) => {
             updateProduct(id, data)
                 .then(
                     data => {
-                        // сбрасываем поле загрузки изображения, чтобы при сохранении товара,
-                        // когда новое изображение не выбрано, не загружать старое повтороно
                         event.target.image.value = ''
-                        // в принципе, мы могли бы сбросить все поля формы на дефолтные значения, но
-                        // если пользователь решит отредатировать тот же товар повтороно, то увидит
-                        // пустые поля формы — http-запрос на получение данных для редактирования мы
-                        // выполняем только тогда, когда выбран новый товар (изменился id товара)
                         const prod = {
                             name: data.name,
                             price: data.price.toString(),
-                            category: data.categoryId.toString(),
-                            brand: data.brandId.toString()
+                            brand: data.brandId.toString(),
+                            mehanizm: data.mehanizmId.toString(),
+                            gender: data.genderId.toString(),
+                            shape: data.shapeId.toString(),
+                            material: data.materialId.toString(),
+                            glass: data.glassId.toString(),
+                            strap: data.strapId.toString(),
+                            power: data.powerId.toString(),
+                            water: data.waterId.toString()
                         }
                         setValue(prod)
                         setValid(isValid(prod))
-                        // мы получим актуальные значения хар-тик с сервера, потому что обновление
-                        // хар-тик завершилось еще до момента отправки этого http-запроса на сервер
                         setProperties(data.props.map(item => {
                             return {...item, unique: uuid(), append: false, remove: false, change: false}
                         }))
-                        // закрываем модальное окно редактирования товара
                         setShow(false)
-                        // изменяем состояние, чтобы обновить список товаров
                         setChange(state => !state)
                     }
                 )
@@ -200,7 +221,7 @@ const UpdateProduct = (props) => {
             </Modal.Header>
 
             <Modal.Body>
-                <Form noValidate onSubmit={handleSubmit}>
+            <Form noValidate onSubmit={handleSubmit}>
                     <Form.Control
                         name="name"
                         value={value.name}
@@ -213,20 +234,6 @@ const UpdateProduct = (props) => {
                     <Row className="mb-3">
                         <Col>
                             <Form.Select
-                                name="category"
-                                value={value.category}
-                                onChange={e => handleInputChange(e)}
-                                isValid={valid.category === true}
-                                isInvalid={valid.category === false}
-                            >
-                                <option value="">Категория</option>
-                                {categories && categories.map(item =>
-                                    <option key={item.id} value={item.id}>{item.name}</option>
-                                )}
-                            </Form.Select>
-                        </Col>
-                        <Col>
-                            <Form.Select
                                 name="brand"
                                 value={value.brand}
                                 onChange={e => handleInputChange(e)}
@@ -235,6 +242,122 @@ const UpdateProduct = (props) => {
                             >
                                 <option value="">Бренд</option>
                                 {brands && brands.map(item =>
+                                    <option key={item.id} value={item.id}>{item.name}</option>
+                                )}
+                            </Form.Select>
+                        </Col>
+                        <Col>
+                            <Form.Select
+                                name="mehanizm"
+                                value={value.mehanizm}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.mehanizm === true}
+                                isInvalid={valid.mehanizm === false}
+                            >
+                                <option value="">Тип механизма</option>
+                                {mehanizms && mehanizms.map(item =>
+                                    <option key={item.id} value={item.id}>{item.name}</option>
+                                )}
+                            </Form.Select>
+                        </Col>
+                        <Col>
+                            <Form.Select
+                                name="gender"
+                                value={value.gender}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.gender === true}
+                                isInvalid={valid.gender === false}
+                            >
+                                <option value="">Пол</option>
+                                {genders && genders.map(item =>
+                                    <option key={item.id} value={item.id}>{item.name}</option>
+                                )}
+                            </Form.Select>
+                        </Col>
+                    </Row>
+                    <Row className="mb-3">
+                        <Col>
+                            <Form.Select
+                                name="shape"
+                                value={value.shape}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.shape === true}
+                                isInvalid={valid.shape === false}
+                            >
+                                <option value="">Форма корпуса</option>
+                                {shapes && shapes.map(item =>
+                                    <option key={item.id} value={item.id}>{item.name}</option>
+                                )}
+                            </Form.Select>
+                        </Col>
+                        <Col>
+                            <Form.Select
+                                name="material"
+                                value={value.material}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.material === true}
+                                isInvalid={valid.material === false}
+                            >
+                                <option value="">Материал корпуса</option>
+                                {materials && materials.map(item =>
+                                    <option key={item.id} value={item.id}>{item.name}</option>
+                                )}
+                            </Form.Select>
+                        </Col>
+                        <Col>
+                            <Form.Select
+                                name="glass"
+                                value={value.glass}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.glass === true}
+                                isInvalid={valid.glass === false}
+                            >
+                                <option value="">Стекло</option>
+                                {glasses && glasses.map(item =>
+                                    <option key={item.id} value={item.id}>{item.name}</option>
+                                )}
+                            </Form.Select>
+                        </Col>
+                    </Row>
+                    <Row className="mb-3">
+                        <Col>
+                            <Form.Select
+                                name="strap"
+                                value={value.strap}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.strap === true}
+                                isInvalid={valid.strap === false}
+                            >
+                                <option value="">Материал браслета/ремешка</option>
+                                {straps && straps.map(item =>
+                                    <option key={item.id} value={item.id}>{item.name}</option>
+                                )}
+                            </Form.Select>
+                        </Col>
+                        <Col>
+                            <Form.Select
+                                name="power"
+                                value={value.power}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.power === true}
+                                isInvalid={valid.power === false}
+                            >
+                                <option value="">Запаса хода</option>
+                                {powers && powers.map(item =>
+                                    <option key={item.id} value={item.id}>{item.name}</option>
+                                )}
+                            </Form.Select>
+                        </Col>
+                        <Col>
+                            <Form.Select
+                                name="water"
+                                value={value.water}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.water === true}
+                                isInvalid={valid.water === false}
+                            >
+                                <option value="">Водонепроницаемость</option>
+                                {waters && waters.map(item =>
                                     <option key={item.id} value={item.id}>{item.name}</option>
                                 )}
                             </Form.Select>

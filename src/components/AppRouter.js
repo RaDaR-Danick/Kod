@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home.js'
 import Shop from '../pages/Shop.js'
-
 import Login from '../pages/Login.js'
 import Signup from '../pages/Signup.js'
 import Basket from '../pages/Basket.js'
@@ -46,7 +45,6 @@ import { observer } from 'mobx-react-lite'
 const publicRoutes = [
     {path: '/', Component: Home},
     {path: '/Shop', Component: Shop},
-
     {path: '/login', Component: Login},
     {path: '/signup', Component: Signup},
     {path: '/product/:id', Component: Product},
