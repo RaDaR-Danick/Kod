@@ -210,6 +210,27 @@ export const fetchWater = async (id) => {
     return data;
 };
 
+export const createCollection = async (collection) => {
+    const { data } = await authInstance.post('collection/create', collection);
+    return data;
+};
+export const updateCollection = async (id, collection) => {
+    const { data } = await authInstance.put(`collection/update/${id}`, collection);
+    return data;
+};
+export const deleteCollection = async (id) => {
+    const { data } = await authInstance.delete(`collection/delete/${id}`);
+    return data;
+};
+export const fetchCollections = async () => {
+    const { data } = await guestInstance.get('collection/getall');
+    return data;
+};
+export const fetchCollection = async (id) => {
+    const { data } = await guestInstance.get(`collection/getone/${id}`);
+    return data;
+};
+
 export const updateProduct = async (id, product) => {
     const { data } = await authInstance.put(`product/update/${id}`, product)
     return data

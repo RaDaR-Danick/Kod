@@ -13,7 +13,10 @@ import WaterBar from '../components/WaterBar.js';
 import ProductList from '../components/ProductList.js';
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../components/AppContext.js';
-import {fetchCategories, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, fetchWaters, fetchAllProducts} from '../http/catalogAPI.js';
+import {fetchCategories, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, 
+    fetchWaters, fetchCollections, 
+    fetchAllProducts
+} from '../http/catalogAPI.js';
 import { observer } from 'mobx-react-lite';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import ProductsSort from '../components/PrtoductsSort.js';
@@ -62,11 +65,15 @@ const getSearchParams = (searchParams) => {
     if (water && /[1-9][0-9]*/.test(water)) {
         water = parseInt(water);
     }
+    let collection = searchParams.get('collection');
+    if (collection && /[1-9][0-9]*/.test(collection)) {
+        collection = parseInt(collection);
+    }
     let page = searchParams.get('page');
     if (page && /[1-9][0-9]*/.test(page)) {
       page = parseInt(page);
     }
-    return { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, page };
+    return { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, collection, page };
   };
 
 const Shop = observer(() => {
@@ -81,6 +88,7 @@ const Shop = observer(() => {
     const [strapsFetching, setStrapsFetching] = useState(true);
     const [powersFetching, setPowersFetching] = useState(true);
     const [watersFetching, setWatersFetching] = useState(true);
+    const [collectionsFetching, setCollectionsFetching] = useState(true);
     const [productsFetching, setProductsFetching] = useState(true);
     const [sortOrder, setSortOrder] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
@@ -135,9 +143,13 @@ const Shop = observer(() => {
 
     fetchWaters()
         .then((data) => (catalog.waters = data))
-        .finally(() => setWatersFetching(false));  
+        .finally(() => setWatersFetching(false));
     
-        const { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, page } =
+    fetchCollections()
+        .then((data) => (catalog.collections = data))
+        .finally(() => setCollectionsFetching(false))
+    
+        const { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, collection, page } =
         getSearchParams(searchParams);
         catalog.category = category;
         catalog.brand = brand;
@@ -149,12 +161,13 @@ const Shop = observer(() => {
         catalog.strap = strap;
         catalog.power = power;
         catalog.water = water;
+        catalog.collection = collection;
         catalog.page = page ?? 1;
     }, []);
 
     useEffect(() => {
-        const { category, brand, mehanizm, shape, gender, material, glass, strap, power, water, page } = getSearchParams(searchParams);
-        if (category || brand || mehanizm || gender || shape || material || glass || strap || power || water || page) {
+        const { category, brand, mehanizm, shape, gender, material, glass, strap, power, water, collection, page } = getSearchParams(searchParams);
+        if (category || brand || mehanizm || gender || shape || material || glass || strap || power || water || collection || page) {
             if (category !== catalog.category) {catalog.category = category}
             if (brand !== catalog.brand) {catalog.brand = brand}
             if (mehanizm !== catalog.mehanizm) {catalog.mehanizm = mehanizm}
@@ -165,6 +178,7 @@ const Shop = observer(() => {
             if (strap !== catalog.strap) {catalog.strap = strap}
             if (power !== catalog.power) {catalog.power = power}
             if (water !== catalog.water) {catalog.water = water}
+            if (collection !== catalog.collection) {catalog.collection = collection}
             if (page !== catalog.page) {catalog.page = page ?? 1}
         } else {
             catalog.category = null;
@@ -177,6 +191,7 @@ const Shop = observer(() => {
             catalog.strap = null;
             catalog.power = null;
             catalog.water = null;
+            catalog.collection = null;
             catalog.page = 1;
         }
     }, [location.search]);
@@ -195,6 +210,7 @@ const Shop = observer(() => {
             catalog.strap,
             catalog.power,
             catalog.water,
+            catalog.collection,
             catalog.page,
             catalog.limit,
             sortOrder,
@@ -223,6 +239,7 @@ const Shop = observer(() => {
         catalog.strap,
         catalog.power,
         catalog.water,
+        catalog.collection,
         catalog.page,
         catalog.minPrice,
         catalog.maxPrice,

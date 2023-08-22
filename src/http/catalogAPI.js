@@ -89,6 +89,15 @@ export const fetchWater = async (id) => {
     const { data } = await guestInstance.get(`water/getone/${id}`);
     return data;
 };
+
+export const fetchCollections = async () => {
+    const { data } = await guestInstance.get("collection/getall");
+    return data;
+};
+export const fetchCollection = async (id) => {
+    const { data } = await guestInstance.get(`collection/getone/${id}`);
+    return data;
+};
   
 export const createProduct = async (product) => {
     const { data } = await authInstance.post("product/create", product);
@@ -115,6 +124,7 @@ export const fetchAllProducts = async (
     strapId = null,
     powerId = null,
     waterId = null,
+    collectionId = null,
     page = 1,
     limit = 4,
     sortOrder = "",
@@ -132,6 +142,7 @@ export const fetchAllProducts = async (
     if (strapId) url = url + "/strapId/" + strapId;
     if (powerId) url = url + "/powerId/" + powerId;
     if (waterId) url = url + "/waterId/" + waterId;
+    if (collectionId) url = url + "/collectionId/" + collectionId;
   
     const { data } = await guestInstance.get(url, {
       params: {searchTerm, page, limit, sortOrder, minPrice, maxPrice },

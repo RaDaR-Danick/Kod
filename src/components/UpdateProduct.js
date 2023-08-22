@@ -1,12 +1,18 @@
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap'
-import { fetchOneProduct, updateProduct, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, fetchWaters } from '../http/catalogAPI.js'
+import { fetchOneProduct, updateProduct, fetchBrands, fetchMehanizms, fetchGenders, 
+    fetchShapes, fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, fetchWaters, fetchCollections
+} from '../http/catalogAPI.js'
 import { useState, useEffect } from 'react'
 import uuid from 'react-uuid'
 import UpdateProperties from './UpdateProperties.js'
 import { createProperty, updateProperty, deleteProperty } from '../http/catalogAPI.js'
 
-const defaultValue = {name: '', price: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: ''}
-const defaultValid = {name: null, price: null, brand: null, mehanizm: null, gender: null, shape: null, material: null, glass: null, strap: null, power: null, water: null}
+const defaultValue = {name: '', price: '', brand: '', mehanizm: '', gender: '', shape: '', 
+    material: '', glass: '', strap: '', power: '', water: '', collection: ''
+}
+const defaultValid = {name: null, price: null, brand: null, mehanizm: null, gender: null, 
+    shape: null, material: null, glass: null, strap: null, power: null, water: null, collection: null
+}
 
 const isValid = (value) => {
     const result = {}
@@ -23,6 +29,7 @@ const isValid = (value) => {
         if (key === 'strap') result.strap = pattern.test(value.strap)
         if (key === 'power') result.power = pattern.test(value.power)
         if (key === 'water') result.water = pattern.test(value.water)
+        if (key === 'collection') result.collection = pattern.test(value.collection)
     }
     return result
 }
@@ -79,6 +86,7 @@ const UpdateProduct = (props) => {
     const [straps, setStraps] = useState(null)
     const [powers, setPowers] = useState(null)
     const [waters, setWaters] = useState(null)
+    const [collections, setCollections] = useState(null)
     const [image, setImage] = useState(null)
     const [properties, setProperties] = useState([])
 
@@ -99,7 +107,8 @@ const UpdateProduct = (props) => {
                             glass: data.glassId.toString(),
                             strap: data.strapId.toString(),
                             power: data.powerId.toString(),
-                            water: data.waterId.toString()
+                            water: data.waterId.toString(),
+                            collection: data.collectionId.toString()
                         }
                         setValue(prod)
                         setValid(isValid(prod))
@@ -147,6 +156,10 @@ const UpdateProduct = (props) => {
                 .then(
                     data => setWaters(data)
                 )
+            fetchCollections()
+                .then(
+                    data => setCollections(data)
+                )
         }
     }, [id])
 
@@ -164,7 +177,9 @@ const UpdateProduct = (props) => {
         event.preventDefault()
         const correct = isValid(value)
         setValid(correct)
-        if (correct.name && correct.price && correct.brand && correct.mehanizm && correct.gender && correct.shape && correct.material && correct.glass && correct.strap && correct.power && correct.water) {
+        if (correct.name && correct.price && correct.brand && correct.mehanizm && correct.gender && correct.shape && 
+                correct.material && correct.glass && correct.strap && correct.power && correct.water && correct.collection
+            ) {
             const data = new FormData()
             data.append('name', value.name.trim())
             data.append('price', value.price.trim())
@@ -177,6 +192,7 @@ const UpdateProduct = (props) => {
             data.append('strapId', value.strap)
             data.append('powerId', value.power)
             data.append('waterId', value.water)
+            data.append('collectionId', value.collection)
             if (image) data.append('image', image, image.name)
             if (properties.length) {
                 await updateProperties(properties, id)
@@ -197,7 +213,8 @@ const UpdateProduct = (props) => {
                             glass: data.glassId.toString(),
                             strap: data.strapId.toString(),
                             power: data.powerId.toString(),
-                            water: data.waterId.toString()
+                            water: data.waterId.toString(),
+                            collection: data.collectionId.toString()
                         }
                         setValue(prod)
                         setValid(isValid(prod))
@@ -358,6 +375,22 @@ const UpdateProduct = (props) => {
                             >
                                 <option value="">Водонепроницаемость</option>
                                 {waters && waters.map(item =>
+                                    <option key={item.id} value={item.id}>{item.name}</option>
+                                )}
+                            </Form.Select>
+                        </Col>
+                    </Row>
+                    <Row className='mb-3'>
+                        <Col>
+                            <Form.Select
+                                name="collection"
+                                value={value.collection}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.collection === true}
+                                isInvalid={valid.collection === false}
+                            >
+                                <option value="">Коллекция</option>
+                                {collections && collections.map(item =>
                                     <option key={item.id} value={item.id}>{item.name}</option>
                                 )}
                             </Form.Select>

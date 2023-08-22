@@ -1,10 +1,17 @@
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap'
-import { createProduct, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, fetchWaters } from '../http/catalogAPI.js'
+import { createProduct, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, 
+    fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, fetchWaters, fetchCollections
+} from '../http/catalogAPI.js'
 import { useState, useEffect } from 'react'
 import CreateProperties from './CreateProperties.js'
 
-const defaultValue = {name: '', price: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: ''}
-const defaultValid = {name: null, price: null, brand: null, mehanizm: null, gender: null, shape: null, material: null, glass: null, strap: null, power: null, water: null}
+const defaultValue = {name: '', price: '', brand: '', mehanizm: '', gender: '', 
+    shape: '', material: '', glass: '', strap: '', power: '', water: '', collection: ''
+}
+const defaultValid = {name: null, price: null, brand: null, mehanizm: null, 
+    gender: null, shape: null, material: null, glass: null, strap: null, power: null, water: null, 
+    collection: null
+}
 
 const isValid = (value) => {
     const result = {}
@@ -21,6 +28,7 @@ const isValid = (value) => {
         if (key === 'strap') result.strap = pattern.test(value.strap)
         if (key === 'power') result.power = pattern.test(value.power)
         if (key === 'water') result.water = pattern.test(value.water)
+        if (key === 'collection') result.collection = pattern.test(value.collection)
     }
     return result
 }
@@ -41,6 +49,7 @@ const CreateProduct = (props) => {
     const [straps, setStraps] = useState(null)
     const [powers, setPowers] = useState(null)
     const [waters, setWaters] = useState(null)
+    const [collections, setCollections] = useState(null)
     useEffect(() => {
         fetchBrands()
             .then(
@@ -78,6 +87,10 @@ const CreateProduct = (props) => {
             .then(
                 data => setWaters(data)
             )
+        fetchCollections()
+            .then(
+                data => setCollections(data)
+            )
     }, [])
 
     const handleInputChange = (event) => {
@@ -94,7 +107,9 @@ const CreateProduct = (props) => {
         event.preventDefault()
         const correct = isValid(value)
         setValid(correct)
-        if (correct.name && correct.price && correct.brand && correct.mehanizm && correct.gender && correct.shape && correct.material && correct.glass && correct.strap && correct.power && correct.water) {
+        if (correct.name && correct.price && correct.brand && correct.mehanizm && correct.gender && correct.shape && 
+            correct.material && correct.glass && correct.strap && correct.power && correct.water && correct.collection
+        ) {
 
             const data = new FormData()
             data.append('name', value.name.trim())
@@ -108,6 +123,7 @@ const CreateProduct = (props) => {
             data.append('strapId', value.strap)
             data.append('powerId', value.power)
             data.append('waterId', value.water)
+            data.append('collectionId', value.collection)
             if (image) data.append('image', image, image.name)
             if (properties.length) {
                 const props = properties.filter(
@@ -172,8 +188,6 @@ const CreateProduct = (props) => {
                                 name="mehanizm"
                                 value={value.mehanizm}
                                 onChange={e => handleInputChange(e)}
-                                isValid={valid.mehanizm === true}
-                                isInvalid={valid.mehanizm === false}
                             >
                                 <option value="">Тип механизма</option>
                                 {mehanizms && mehanizms.map(item =>
@@ -186,8 +200,6 @@ const CreateProduct = (props) => {
                                 name="gender"
                                 value={value.gender}
                                 onChange={e => handleInputChange(e)}
-                                isValid={valid.gender === true}
-                                isInvalid={valid.gender === false}
                             >
                                 <option value="">Пол</option>
                                 {genders && genders.map(item =>
@@ -202,8 +214,6 @@ const CreateProduct = (props) => {
                                 name="shape"
                                 value={value.shape}
                                 onChange={e => handleInputChange(e)}
-                                isValid={valid.shape === true}
-                                isInvalid={valid.shape === false}
                             >
                                 <option value="">Форма корпуса</option>
                                 {shapes && shapes.map(item =>
@@ -216,8 +226,6 @@ const CreateProduct = (props) => {
                                 name="material"
                                 value={value.material}
                                 onChange={e => handleInputChange(e)}
-                                isValid={valid.material === true}
-                                isInvalid={valid.material === false}
                             >
                                 <option value="">Материал корпуса</option>
                                 {materials && materials.map(item =>
@@ -230,8 +238,6 @@ const CreateProduct = (props) => {
                                 name="glass"
                                 value={value.glass}
                                 onChange={e => handleInputChange(e)}
-                                isValid={valid.glass === true}
-                                isInvalid={valid.glass === false}
                             >
                                 <option value="">Стекло</option>
                                 {glasses && glasses.map(item =>
@@ -246,8 +252,6 @@ const CreateProduct = (props) => {
                                 name="strap"
                                 value={value.strap}
                                 onChange={e => handleInputChange(e)}
-                                isValid={valid.strap === true}
-                                isInvalid={valid.strap === false}
                             >
                                 <option value="">Материал браслета/ремешка</option>
                                 {straps && straps.map(item =>
@@ -260,8 +264,6 @@ const CreateProduct = (props) => {
                                 name="power"
                                 value={value.power}
                                 onChange={e => handleInputChange(e)}
-                                isValid={valid.power === true}
-                                isInvalid={valid.power === false}
                             >
                                 <option value="">Запаса хода</option>
                                 {powers && powers.map(item =>
@@ -274,11 +276,23 @@ const CreateProduct = (props) => {
                                 name="water"
                                 value={value.water}
                                 onChange={e => handleInputChange(e)}
-                                isValid={valid.water === true}
-                                isInvalid={valid.water === false}
                             >
                                 <option value="">Водонепроницаемость</option>
                                 {waters && waters.map(item =>
+                                    <option key={item.id} value={item.id}>{item.name}</option>
+                                )}
+                            </Form.Select>
+                        </Col>
+                    </Row>
+                    <Row style={{marginBottom:"15px"}}>
+                        <Col>
+                            <Form.Select
+                                name="collection"
+                                value={value.collection}
+                                onChange={e => handleInputChange(e)}
+                            >
+                                <option value="">Коллекции</option>
+                                {collections && collections.map(item =>
                                     <option key={item.id} value={item.id}>{item.name}</option>
                                 )}
                             </Form.Select>

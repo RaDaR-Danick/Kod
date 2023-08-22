@@ -62,12 +62,12 @@ const Product = () => {
       { label: "Материал ремешка/браслета", value: product.strap?.name },
       { label: "Запас хода", value: product.power?.name },
       { label: "Водонепроницаемость", value: product.water?.name },
-      { label: "Водонепроницаемость", value: product.collection?.name },
-      { label: "Водонепроницаемость", value: product.type?.name },
-      { label: "Водонепроницаемость", value: product.thic?.name },
-      { label: "Водонепроницаемость", value: product.color?.name },
-      { label: "Водонепроницаемость", value: product.fin?.name },
-      { label: "Водонепроницаемость", value: product.mat?.name },
+      { label: "Коллекция", value: product.collection?.name },
+      { label: "Тип товара", value: product.type?.name },
+      { label: "Толщина пишущего узла", value: product.thic?.name },
+      { label: "Цвет стержня", value: product.color?.name },
+      { label: "Цвет отделки", value: product.fin?.name },
+      { label: "Материал", value: product.mat?.name },
     ];
   
     return (

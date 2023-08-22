@@ -28,6 +28,7 @@ import AdminGlasses from '../pages/AdminGlasses.js'
 import AdminStraps from '../pages/AdminStraps.js'
 import AdminPowers from '../pages/AdminPowers.js'
 import AdminWaters from '../pages/AdminWaters.js'
+import AdminCollections from '../pages/AdminCollections.js'
 import AdminProducts from '../pages/AdminProducts.js'
 import AK from '../pages/ak.js'
 import CK from '../pages/ck.js'
@@ -87,6 +88,7 @@ const adminRoutes = [
     {path: '/admin/straps', Component: AdminStraps},
     {path: '/admin/powers', Component: AdminPowers},
     {path: '/admin/waters', Component: AdminWaters},
+    {path: '/admin/collections', Component: AdminCollections},
     {path: '/admin/catalogs', Component: AdminProducts},
 ]
 

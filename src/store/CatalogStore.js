@@ -11,6 +11,7 @@ class CatalogStore {
     _straps = [];
     _powers = [];
     _waters = [];
+    _collections = [];
     _products = [];
     _category = null;
     _brand = null;
@@ -22,6 +23,7 @@ class CatalogStore {
     _strap = null;
     _power = null;
     _water = null;
+    _collection = null;
     _page = 1;
     _count = 0;
     _limit = 16;
@@ -64,6 +66,9 @@ class CatalogStore {
     get waters() {
         return this._waters;
     }
+    get collections() {
+        return this._collections;
+    }
     get products() {
         return this._products;
     }
@@ -97,6 +102,9 @@ class CatalogStore {
     }
     get water() {
         return this._water;
+    }
+    get collection() {
+        return this._collection;
     }
     get page() {
         return this._page;
@@ -151,6 +159,9 @@ class CatalogStore {
     set waters(waters) {
         this._waters = waters;
     }
+    set collections(collections) {
+        this._collections = collections;
+    }
     set products(products) {
         this._products = products;
     }
@@ -194,6 +205,10 @@ class CatalogStore {
     set water(id) {
         this.page = 1;
         this._water = id;
+    }
+    set collection(id) {
+        this.page = 1;
+        this._collection = id;
     }
     set page(page) {
         this._page = page;
