@@ -98,7 +98,6 @@ const UpdateProduct = (props) => {
                         const prod = {
                             name: data.name,
                             price: data.price.toString(),
-                            category: data.categoryId.toString(),
                             brand: data.brandId.toString(),
                             mehanizm: data.mehanizmId.toString(),
                             gender: data.genderId.toString(),

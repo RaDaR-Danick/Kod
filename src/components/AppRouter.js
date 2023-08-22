@@ -6,7 +6,6 @@ import Signup from '../pages/Signup.js'
 import Basket from '../pages/Basket.js'
 import Checkout from '../pages/Checkout.js'
 import Product from '../pages/Product.js'
-import ProductMobile from '../pages/ProductMobile.js'
 import About from '../pages/About.js'
 import Delivery from '../pages/Delivery.js'
 import Service from '../pages/Service.js'
@@ -18,7 +17,6 @@ import UserOrder from '../pages/UserOrder.js'
 import Admin from '../pages/Admin.js'
 import AdminOrders from '../pages/AdminOrders.js'
 import AdminOrder from '../pages/AdminOrder.js'
-import AdminCategories from '../pages/AdminCategories.js'
 import AdminBrands from '../pages/AdminBrands.js'
 import AdminMehanizms from '../pages/AdminMehanizms.js'
 import AdminGenders from '../pages/AdminGenders.js'
@@ -49,7 +47,6 @@ const publicRoutes = [
     {path: '/login', Component: Login},
     {path: '/signup', Component: Signup},
     {path: '/product/:id', Component: Product},
-    {path: '/productmobile/:id', Component: ProductMobile},
     {path: '/basket', Component: Basket},
     {path: '/checkout', Component: Checkout},
     {path: '/about', Component: About},
@@ -78,7 +75,6 @@ const adminRoutes = [
     {path: '/admin', Component: Admin},
     {path: '/admin/orders', Component: AdminOrders},
     {path: '/admin/order/:id', Component: AdminOrder},
-    {path: '/admin/categories', Component: AdminCategories},
     {path: '/admin/brands', Component: AdminBrands},
     {path: '/admin/mehanizms', Component: AdminMehanizms},
     {path: '/admin/genders', Component: AdminGenders},

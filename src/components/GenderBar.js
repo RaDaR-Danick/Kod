@@ -32,7 +32,6 @@ const GenderBar = observer(() => {
             catalog.gender = id
         }
         const params = {}
-        if (catalog.category) params.category = catalog.category
         if (catalog.brand) params.brand = catalog.brand
         if (catalog.mehanizm) params.mehanizm = catalog.mehanizm
         if (catalog.gender) params.gender = catalog.gender

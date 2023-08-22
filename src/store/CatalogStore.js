@@ -1,7 +1,6 @@
 import { makeAutoObservable } from "mobx";
 
 class CatalogStore {
-    _categories = [];
     _brands = [];
     _mehanizms = [];
     _genders = [];
@@ -13,7 +12,6 @@ class CatalogStore {
     _waters = [];
     _collections = [];
     _products = [];
-    _category = null;
     _brand = null;
     _mehanizm = null;
     _gender = null;
@@ -36,9 +34,6 @@ class CatalogStore {
         makeAutoObservable(this);
     }
 
-    get categories() {
-        return this._categories;
-    }
     get brands() {
         return this._brands;
     }
@@ -73,9 +68,6 @@ class CatalogStore {
         return this._products;
     }
 
-    get category() {
-        return this._category;
-    }
     get brand() {
         return this._brand;
     }
@@ -129,9 +121,6 @@ class CatalogStore {
 		return this._maxPrice;
 	}
 
-    set categories(categories) {
-        this._categories = categories;
-    }
     set brands(brands) {
         this._brands = brands;
     }
@@ -166,10 +155,6 @@ class CatalogStore {
         this._products = products;
     }
 
-    set category(id) {
-        this.page = 1;
-        this._category = id;
-    }
     set brand(id) {
         this.page = 1;
         this._brand = id;

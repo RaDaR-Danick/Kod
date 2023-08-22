@@ -1,6 +1,5 @@
 import { Container, Row, Col, Spinner, Card } from 'react-bootstrap';
 import SearchField from '../components/SearchField.js';
-import CategoryBar from '../components/CategoryBar.js';
 import BrandBar from '../components/BrandBar.js';
 import MehanizmBar from '../components/MehanizmBar.js';
 import GenderBar from '../components/GenderBar.js';
@@ -13,7 +12,7 @@ import WaterBar from '../components/WaterBar.js';
 import ProductList from '../components/ProductList.js';
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../components/AppContext.js';
-import {fetchCategories, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, 
+import {fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, 
     fetchWaters, fetchCollections, 
     fetchAllProducts
 } from '../http/catalogAPI.js';
@@ -25,10 +24,6 @@ import axios from 'axios';
 import { Helmet } from 'react-helmet';
 
 const getSearchParams = (searchParams) => {
-    let category = searchParams.get('category');
-    if (category && /[1-9][0-9]*/.test(category)) {
-        category = parseInt(category);
-    }
     let brand = searchParams.get('brand');
     if (brand && /[1-9][0-9]*/.test(brand)) {
         brand = parseInt(brand);
@@ -73,12 +68,11 @@ const getSearchParams = (searchParams) => {
     if (page && /[1-9][0-9]*/.test(page)) {
       page = parseInt(page);
     }
-    return { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, collection, page };
+    return { brand, mehanizm, gender, shape, material, glass, strap, power, water, collection, page };
   };
 
 const Shop = observer(() => {
     const { catalog } = useContext(AppContext);
-    const [categoriesFetching, setCategoriesFetching] = useState(true);
     const [brandsFetching, setBrandsFetching] = useState(true);
     const [mehanizmsFetching, setMehanizmsFetching] = useState(true);
     const [gendersFetching, setGendersFetching] = useState(true);
@@ -105,9 +99,6 @@ const Shop = observer(() => {
     }, []);
 
     useEffect(() => {
-        fetchCategories()
-        .then((data) => (catalog.categories = data))
-        .finally(() => setCategoriesFetching(false));
 
     fetchBrands()
         .then((data) => (catalog.brands = data))
@@ -149,9 +140,8 @@ const Shop = observer(() => {
         .then((data) => (catalog.collections = data))
         .finally(() => setCollectionsFetching(false))
     
-        const { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, collection, page } =
+        const { brand, mehanizm, gender, shape, material, glass, strap, power, water, collection, page } =
         getSearchParams(searchParams);
-        catalog.category = category;
         catalog.brand = brand;
         catalog.mehanizm = mehanizm;
         catalog.gender = gender;
@@ -166,9 +156,8 @@ const Shop = observer(() => {
     }, []);
 
     useEffect(() => {
-        const { category, brand, mehanizm, shape, gender, material, glass, strap, power, water, collection, page } = getSearchParams(searchParams);
-        if (category || brand || mehanizm || gender || shape || material || glass || strap || power || water || collection || page) {
-            if (category !== catalog.category) {catalog.category = category}
+        const { brand, mehanizm, shape, gender, material, glass, strap, power, water, collection, page } = getSearchParams(searchParams);
+        if (brand || mehanizm || gender || shape || material || glass || strap || power || water || collection || page) {
             if (brand !== catalog.brand) {catalog.brand = brand}
             if (mehanizm !== catalog.mehanizm) {catalog.mehanizm = mehanizm}
             if (gender !== catalog.gender) {catalog.gender = gender}
@@ -181,7 +170,6 @@ const Shop = observer(() => {
             if (collection !== catalog.collection) {catalog.collection = collection}
             if (page !== catalog.page) {catalog.page = page ?? 1}
         } else {
-            catalog.category = null;
             catalog.brand = null;
             catalog.mehanizm = null;
             catalog.gender = null;
@@ -200,7 +188,6 @@ const Shop = observer(() => {
         setProductsFetching(true);
         fetchAllProducts(
             searchTerm,
-            catalog.category,
             catalog.brand,
             catalog.mehanizm,
             catalog.gender,
@@ -229,7 +216,6 @@ const Shop = observer(() => {
         .finally(() => setProductsFetching(false));
     }, [
         searchTerm,
-        catalog.category,
         catalog.brand,
         catalog.mehanizm,
         catalog.gender,
@@ -271,7 +257,6 @@ const Shop = observer(() => {
             <Row className="mt-4">
                 <Col md={3} className="mb-3">
                     <div>{maxPrice ? <PriceSlider maxPrice={maxPrice} /> : null}</div>
-                    <div>{categoriesFetching ? <Spinner animation="border" /> : <CategoryBar />}</div>
                     <div>{brandsFetching ? <Spinner animation="border" /> : <BrandBar />}</div>
                     <div className="mt-3">{mehanizmsFetching ? <Spinner animation="border" /> : <MehanizmBar />}</div>
                     <div className="mt-3">{gendersFetching ? <Spinner animation="border" /> : <GenderBar />}</div>

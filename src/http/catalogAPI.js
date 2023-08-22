@@ -1,13 +1,4 @@
 import { guestInstance, authInstance } from "./index.js";
-
-export const fetchCategories = async () => {
-    const { data } = await guestInstance.get("category/getall");
-    return data;
-};
-export const fetchCategory = async (id) => {
-    const { data } = await guestInstance.get(`category/getone/${id}`);
-    return data;
-};
   
 export const fetchBrands = async () => {
     const { data } = await guestInstance.get("brand/getall");
@@ -114,7 +105,6 @@ export const deleteProduct = async (id) => {
   
 export const fetchAllProducts = async (
     searchTerm = "",
-    categoryId = null,
     brandId = null,
     mehanizmId = null,
     genderId = null,
@@ -132,7 +122,6 @@ export const fetchAllProducts = async (
     maxPrice = null
 ) => {
     let url = "product/getall";
-    if (categoryId) url = url + "/categoryId/" + categoryId;
     if (brandId) url = url + "/brandId/" + brandId;
     if (mehanizmId) url = url + "/mehanizmId/" + mehanizmId;
     if (genderId) url = url + "/genderId/" + genderId;
